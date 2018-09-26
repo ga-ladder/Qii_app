@@ -1,0 +1,9 @@
+$colors: (
+    Qgreen: #55c500,
+    deepGreen: #3f9200,
+    paleGreen: #edfce2,
+);
+
+@function colors($key) {
+    @return map-get($colors, $key);
+}

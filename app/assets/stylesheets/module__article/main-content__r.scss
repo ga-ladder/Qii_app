@@ -1,0 +1,43 @@
+.main-content__r{
+  width:300px;
+  margin-left:16px;
+}
+.p-home{
+  &__ad{
+    margin-bottom: 16px;
+    height:250px;
+  }
+}
+
+.rank-userList{
+  background-color: #fff;
+  border: 1px solid transparent;
+  margin-bottom: 16px;
+  &__header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: cetner;
+    justify-content: space-between;
+  }
+  &__label{
+    font-size: 1.4rem;
+  }
+  &__tab{
+    display: flex;
+    &--Item{
+      font-size: 1.2rem;
+      color: #999;
+      cursor: pointer;
+    }
+    &--Item:not(:last-child){
+      margin-right: 8px;
+    }
+  }
+  &__content{
+
+  }
+}
+.is-active{
+  font-weight: 700;
+  color: #333;
+}

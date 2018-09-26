@@ -1,0 +1,147 @@
+@import '../config/reset.scss';
+@import '../config/color.scss';
+.container{
+  width: 100vw;
+  height:56px;
+  padding:0 16px;
+  display: block;
+  background-color: colors(Qgreen);
+}
+.nav-bar{
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+  %__l{
+    white-space: nowrap;
+    display: flex;
+    height: 100%;
+    color: white;
+    align-items: center;
+    -webkit-align-items: center;      /* Safari etc. */
+    -ms-align-items    : center;      /* IE10        */
+  }
+  %__r{
+    margin-left: auto;
+    margin-right: 16px;
+    padding-right: 16px;
+    display: flex;
+    height: 100%;
+    color: white;
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items    : center;
+    font-size:1.2rem;
+  }
+  &__l{
+    @extend %__l;
+    display: inline-block;
+    &--icon{
+      @extend %__l;
+      font-size: 33px;
+      transform: scale(1, 0.8);
+    }
+    &--tab{
+      margin-top: 4px;
+      padding: 16px 0px;
+      font-size:1.2rem;
+      line-height: 1;
+      &--icon{
+        @extend %__l;
+        padding: 2px;
+        margin-left: 4px;
+        border-radius: 3px;
+        color: #eee;
+        background-color:rgba(0,0,0,.3);
+        width:1.28571em;
+      }
+      &--home{
+        margin-left:24px;
+      }
+      &--com{
+        margin: 0px 24px;
+      }
+    }
+    &--searchbox{
+      height: 32px;
+      width: 100%;
+      padding-left:32px;
+      padding-right: 8px;
+      border:none;
+      border-radius: 4px;
+      box-shadow:  inset 0 1px 2px #ccc;
+      font-size: 1.2rem;
+
+    }
+  }
+  &__r{
+    @extend %__r;
+    cursor: pointer;
+    position:relative;
+    user-select: none;
+    &--link{
+      margin-top: 4px;
+      margin-right: 16px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+    &--button{
+      display: flex;
+      margin-right: 16px;
+      padding-right: 16px;
+      padding-left: 16px;
+      align-self: center;
+      -webkit-align-items: center;
+      -ms-align-items    : center;
+      justify-content: center;
+      height: 32px;
+      background-color: colors(deepGreen);
+      border-radius: 4px;
+      user-select: none;
+    }
+    &--tab{
+      margin-right: 16px;
+      display: flex;
+      align-items:center;
+      justify-content: center;
+      border-radius: 4px;
+      font-size: 1.4rem;
+      position:relative;
+      cursor:pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      outline: none;
+      width: 32px;
+      height: 32px;
+      color: colors(deepGreen);
+      background-color: colors(paleGreen);
+    }
+    &__loginUser{
+      position:relative;
+      display: flex;
+      align-items: center;
+      margin-right: 16px;
+      cursor:pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      outline: none;
+      &--icon{
+        display: flex;
+        overflow: hidden;
+        border-radius: .2em;
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+      }
+      &--down{
+        color:white;
+      }
+    }
+  }
+}

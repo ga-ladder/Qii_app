@@ -1,0 +1,105 @@
+@import '../config/reset.scss';
+@import '../config/color.scss';
+
+.main-content{
+  &__c{
+    box-sizing:border-box;
+    width: 100%;
+    flex-grow: 1;
+    min-width: 0;
+    background-color: #fff;
+    border: 1px solid transparent;
+    &__header{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      line-height: 1;
+      border-bottom: 1px solid #e8e8e8;
+      padding: 16px;
+      &--label{
+        font-size: 1.6rem;
+        margin-top: 2px;
+        margin-right: 8px;
+      }
+      &--subLabel{
+        font-size: 1.2rem;
+        color: #aaa;
+        margin-top: 2px;
+      }
+    }
+  }
+}
+.tr-ItemList_tab{
+  display: flex;
+  margin-left: auto;
+  &--Item{
+    font-size: 1.2rem;
+    color: #999;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  :not(:last-child){
+    margin-right: 8px;
+  }
+  .is-active{
+    font-weight: 700;
+    color: #333;
+  }
+}
+
+.tr-Item{
+  display: flex;
+  width: 100%;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 16px;
+  &__userImage{
+    display: flex;
+    overflow: hidden;
+    border-radius: .2em;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    margin-right: 8px;
+  }
+  &__body{
+    flex: 1 1;
+  }
+  &__title{
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: inherit;
+    line-height: 1.4;
+    word-wrap: break-word;
+    word-break: break-all;
+// visited
+    color:#777;
+  }
+  &__meta{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: #999;
+    font-size: .9em;
+  }
+  &__author{
+    margin-right: 8px;
+    margin-left: 4px;
+    color: inherit;
+  }
+  &__likeCount{
+    margin:0 8px;
+  }
+  &__new{
+    background-color: #59bb0c;
+    color: #fff;
+    font-size: .85em;
+    font-weight: 400;
+    padding: 1px 3px;
+    margin-right: 5px;
+    border-radius: 2px;
+  }
+}
