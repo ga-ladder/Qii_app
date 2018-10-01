@@ -1,52 +1,11 @@
 <!-- header -->
-<div class="container">
-  <div class="nav-bar">
-    <div class="nav-bar__l">
-      <a class="nav-bar__l--icon" href="/">
-        Qiita
-      </a>
-      <div class="nav-bar__l--tab--icon">
-        ▽
-      </div>
-      <div class="nav-bar__l--tab">
-        <div class="nav-bar__l--tab--home">
-          ホーム
-        </div>
-      </div>
-      <div class="nav-bar__l--tab">
-        <div class="nav-bar__l--tab--com">
-          コミュニティ
-        </div>
-      </div>
-      <input id="search-field" type="text" class="nav-bar__l--searchbox" placeholder="キーワードを入力" />
-    </div>
+<%= render 'header' %>
 
-    <div class="nav-bar__r">
-      <div class="nav-bar__r--link">
-        ストック一覧
-      </div>
-      <div class="nav-bar__r--button">
-        投稿する
-      </div>
-      <div class="nav-bar__r--tab">
-        0
-      </div>
-      <div class="nav-bar__r--loginUser">
-        <div class="nav-bar__r--loginUser--icon">
-          □
-        </div>
-        <div class="nav-bar__r--loginUser--down">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="home-container">
+<div class="home-container px16 pt32">
   <div class="main-content">
     <!-- left bar -->
     <div class="main-content__l">
-      <div class="main-content__l--trend">
+      <div class="main-content__l--trend active">
         トレンド
       </div>
       <div class="main-content__l--timeline">
@@ -187,8 +146,17 @@
     </div>
   </div>
 </div>
-  <!-- footer -->
-  <div class="footer">
+<!-- footer -->
+<div class="footer px16 pt8 pb16">
+  <div class="footer__container">
+    <ul class="footer__stat">
+      <li class="mr8">© 2011-2018 Increments Inc.</li>
+      <li class="mr8">利用規約</li>
+      <li class="mr8">ガイドライン</li>
+      <li class="mr8">プライバシー</li>
+      <li class="mr8">ヘルプ</li>
+    </ul>
     Qiitaとは ユーザー タグ 投稿 ブログ API Qiita:Team 御意見
   </div>
+</div>
 

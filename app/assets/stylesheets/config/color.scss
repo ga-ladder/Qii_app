@@ -2,6 +2,8 @@ $colors: (
     Qgreen: #55c500,
     deepGreen: #3f9200,
     paleGreen: #edfce2,
+    font: #888,
+    bg: #f6f6f6,
 );
 
 @function colors($key) {
