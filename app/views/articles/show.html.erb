@@ -1,0 +1,166 @@
+<!-- https://qiita.com/morishitter/items/c4aa500929f2de441bfd -->
+<%= render 'header' %>
+<div class="home-container px16 pt32">
+<div class="container"> <!-- 記事部分全体 (背景色がグレー) -->
+
+  <!-- 左側に表示される「いいね」「ストック」ボタン -->
+  <div class="stickyMenu">
+    <div class="stickyMenu__likeCount"><a>100</a></div>
+    <div class="stickyMenu__item">
+      <div class="stickyMenu__like fa-fm-green">
+        <button><i class="far fa-thumbs-up fa-green"></i></button>
+      </div>
+    </div>
+    <div class="stickyMenu__item">
+      <div class="stickyMenu__stock fa-bg-gray">
+        <button><i class="fas fa-folder-open fa-white"></i></button>
+      </div>
+    </div>
+  </div>
+  <!-- 記事部分 (背景色が白) -->
+  <div class="main p16">
+    <div class="main__article">
+      <div class="main__header">
+        <div class="main__meta mb24">
+          <div class="main__author">
+            <div class="main__authorIcon">
+              <a>
+                <img class="it-Header_authorImage" src="https://qiita-image-store.s3.amazonaws.com/0/6598/profile-images/1533716344" alt="1533716344">
+              </a>
+            </div>
+            <div class="main__authorName"> @k7a</div>
+          </div>
+          <div class="main__time">
+            <meta content="2016-03-14T00:11:37+09:00" itemprop="datePublished" />
+            <span data-toggle="tooltip" title="2016年03月14日に投稿"><time datetime="2016-03-15T20:42:35+09:00" itemprop="dateModified">2016年03月15日</time>
+              に更新
+            </span>
+          </div>
+          <div class="main__options">
+            <div class="main__manipulate">
+              <div class="dropdown">
+                <a class="main__dropdownToggle" data-toggle="dropdown" href="#">...
+                  <span class="fa fa-ellipsis-h fa-lg"></span>
+                </a>
+                  <!-- <ul class="dropdown-menu dropdown-menu-right">
+                    <li class="dropdown__item">
+                      <a href="/k7a/items/26d7a22233ecdf48fed8/revisions">
+                        <span class="fa fa-fw fa-history"></span> 編集履歴
+                      </a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a href="/k7a/items/26d7a22233ecdf48fed8/patches">
+                        <span class="fa fa-fw fa-inbox"></span> 編集リクエスト一覧
+                      </a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a href="/k7a/items/26d7a22233ecdf48fed8/likers">
+                        <span class="fa fa-fw fa-thumbs-up"></span> いいねしたユーザー一覧
+                      </a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a href="/k7a/items/26d7a22233ecdf48fed8.md">
+                        <span class="fa fa-fw fa-file-text-o"></span> Markdownで本文を見る
+                      </a>
+                    </li>
+                    <li class="divider" role="separator"></li>
+                    <li class="dropdown__item">
+                      <a data-target=".js-report-form" data-toggle="modal" href="#">
+                        <span class="fa fa-fw fa-flag"></span> 問題がある投稿を報告する
+                      </a>
+                    </li>
+                  </ul> -->
+                </div>
+            </div>
+          </div>
+        </div>
+        <h1 class="main__title" itemprop="headline">Chrome拡張の開発方法まとめ　その1：概念編</h1>
+        <div class="main__tags">
+          <div class="main__tags--item">
+            JavaScript
+          </div>
+          <div class="main__tags--item">
+            Chrome
+          </div>
+          <div class="main__tags--item">
+            chrome-extension
+          </div>
+        </div>
+      </div>
+      <div class="main__article--alert p16">
+        この記事は最終更新日から1年以上が経過しています。
+      </div>
+      <div class="main__MDcontent">
+        あるいは、画像コメントのすすめ。
+        他にもスナップショットテストのスクショを埋め込んだり、スタイル設定を可視化したり。
+        いろいろ遊んでみてはいかがでしょうか。
+        注意点
+        画像をリポジトリに含めるとリポジトリが肥大化します。しょうがないね。
+        ソースコードを変更するときは画像も更新が必要です。当然だけどひと手間増えて面倒かも。
+        [ここから追記 9/26更新]
+        以前こんなこと考えていたのを思い出しました。(開発放置中)
+      </div>
+      <div class="main__footer">
+        <div class="main__footer--actions">
+          <div class="main__footer--editRequest">
+            <a href="#" "編集リクエスト">編集リクエスト</a>
+          </div>
+          <div class="main__footer--stock">
+            <button>
+              <span class="main__footer--stockLabel">ストック</span>
+            </button>
+          </div>
+          <div class="main__footer--like">
+          </div>
+        </div>
+        <div class="main__footer--social">
+        </div>
+      </div>
+      <div class="pf-container">
+        <div class="pf-user">
+          <a>
+            <img class="pf-user__img" itemprop="image" src="https://qiita-image-store.s3.amazonaws.com/0/97014/profile-images/1537175383" alt="1537175383">
+          </a>
+          <div class="pf-user__body">
+            <div class="pf-user__header">
+              <a class="pf-user--lnknm">
+                @k7a
+              </a>
+            </div>
+            <div class="pf-user__description">
+              Ruby on Rails & Unity Engineer
+            </div>
+            <div class="pf-user__footer">
+              <span class="userFollowButton">
+                <button class="userFollowButton__btn btn-xs">
+                  <div class="i fa fa-user-plus"></div>
+                  フォロー
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- オプショナルなエリア (非ログイン時は広告が出る) -->
+  <div class="options"></div>
+
+  <!-- 目次 (Table of Contens) -->
+  <div class="toc">
+    <div class="toc__tree">
+      <div class="toc__nav">
+        <ul>
+          <li>対象</li>
+          <li class="active">概要</li>
+          <li class="active">概要</li>
+          <li class="active">概要</li>
+          <li class="active">概要</li>
+          <li class="active">概要</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
