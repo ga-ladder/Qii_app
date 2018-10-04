@@ -1,5 +1,4 @@
 .main-content__r{
-  width:300px;
   margin-left:16px;
 }
 .p-home{
@@ -34,7 +33,38 @@
     }
   }
   &__content{
-
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  &__info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__userName{
+    font-size: 1.4rem;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  &__img{
+    display: flex;
+    overflow: hidden;
+    border-radius: .2em;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: .2em;
+  }
+  &__contribution{
+    color: #999;
+    font-size: 1rem;
+    &--count{
+      color: #333;
+      font-weight: 700;
+      font-size: 1.6rem;
+      text-align: center;
+    }
   }
 }
 .is-active{

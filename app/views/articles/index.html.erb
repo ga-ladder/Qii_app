@@ -35,7 +35,7 @@
       </div>
       <div>
         <!-- necessary 20items-->
-      <% ["a","b"].each do |content| %>
+      <% (1..6).to_a.each do |content| %>
         <div class="tr-Item">
           <a class="tr-Item__userImage">
             <img src="https://qiita-image-store.s3.amazonaws.com/0/159680/profile-images/1490964068" alt="sensuikan1973">
@@ -105,21 +105,71 @@
             </div>
           </div>
         </div>
-        <% ["1","2","3"].each.with_index(1) do |user, rank| %>
+        <% (1..10).to_a.each.with_index(1) do |user, rank| %>
         <div class="rank-userList__content">
-          <%= rank %>
-          <img alt="" src="https://qiita-image-store.s3.amazonaws.com/0/106401/profile-images/1494858105">
-           ＠account
-            865 Contribution
+          <div class="rank-userList__info">
+            <%= rank %>
+            <img alt="" class="px16 rank-userList__img" src="https://qiita-image-store.s3.amazonaws.com/0/106401/profile-images/1494858105">
+            <div class="rank-userList__userName pr8">
+              ＠account
+            </div>
+            <div class="rank-userList__contribution">
+              <div class="rank-userList__contribution--count">
+                865
+              </div>
+              Contribution
+            </div>
+          </div>
         </div>
         <% end %>
       </div>
-
-      コニュニティスポンサー
-        icon1
-        icon2
-        icon3
-        コミュニティスポンサー
+      <div class="rank-userList p16">
+        <div class="rank-userList__header mb16">
+          <div class="rank-userList__label">
+            タグランキング
+          </div>
+          <div class="rank-userList__tab">
+            <div class="rank-userList__tab--Item is-active">
+              1日
+            </div>
+            <div class="rank-userList__tab--Item">
+              週間
+            </div>
+            <div class="rank-userList__tab--Item">
+              月間
+            </div>
+          </div>
+        </div>
+        <% (1..10).to_a.each.with_index(1) do |user, rank| %>
+        <div class="rank-userList__content">
+          <div class="rank-userList__info">
+            <%= rank %>
+            <img alt="" class="px16 rank-userList__img" src="https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/bcef5ec765c6eb84e5ec3300ce1ff16850bb3e14/medium.jpg?1512821048">
+            <div class="rank-userList__userName pr8">
+              python
+            </div>
+            <div class="rank-userList__contribution">
+              <div class="rank-userList__contribution--count">
+                50
+              </div>
+              posts
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="rank-userList p16">
+        <div class="rank-userList__header mb16">
+          <div class="rank-userList__label">
+            コミュニティスポンサー
+          </div>
+        </div>
+        <div class="rank-userList__content">
+          <a  target="_blank" href="https://di-v.co.jp/">
+            <img alt="株式会社div" src="https://di-v.co.jp/wp-content/themes/div/library/images/logo.svg" scale="0">
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
