@@ -1,0 +1,105 @@
+<div class="organizations__container organizations organizations__raw">
+  <div class="organizations__main">
+    <div class="organizations__main__header">
+      <h1>Organization一覧</h1>
+      <div>
+        <div class="organizations__main__header--column btn btn-default">
+          <i class="fas fa-filter"></i>
+          全て表示
+        </div>
+        <div class="organizations__main__header--column btn btn-default">
+          <i class="fas fa-sort-amount-down"></i>
+          1週間の活動量
+        </div>
+      </div>
+    </div>
+    <ul class="organizations__main__list">
+      <% (1..20).to_a.each do |sample| %>
+      <li class="organizations__main__item">
+        <div class="organizations__main__icon">
+          <a class="organizations__main__icon--box" hrel="/articles">
+            <img itemprop="image" src="https://s3-ap-northeast-1.amazonaws.com/qiita-organization-image/26c6eee478a84bbfe86627e844f5738273c385ce/original.jpg?1512713262">
+          </a>
+        </div>
+        <div class="organizations__main__profile">
+          <h2 class="mb8">
+            <a href="/show">株式会社スノウロビン</a>
+          </h2>
+          <div class="organizations__main__profile--about">
+            こんなのみたことない！を世界中に。
+          </div>
+          <div class="organizations__main__profile--meta">
+            <span class="fas fa-users organizations__main__profile--fa"></span>
+            <span class="mr8">6</span>
+            <span class="fas fa-globe organizations__main__profile--fa"></span>
+            <span class="mr8">
+              <a href="https://www.snowrobin.jp/" target="_blank">
+                https://www.snowrobin.jp/
+              </a>
+            </span>
+            <span class="mr8">
+              〒530-0005 大阪市北区中之島2-3-18 中之島フェスティバルタワー16階
+            </span>
+            <div>
+              <span class="fa fa-map-pin organizations__main__profile--fa"></span>
+              <span>全国各地</span>
+            </div>
+          </div>
+        </div>
+        <div class="organizations__main__profile--chart">
+          <div class="organizations__main__profile--chart--data">
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="organizations__side-bar">
+    <div class="organizations__userInfo">
+      <div class="organizations__userInfo__left">
+        <a href="/">
+          <img alt="" class="organizations__userInfo__icon" src="https://avatars3.githubusercontent.com/u/8581682?v=4">
+        </a>
+      </div>
+      <div class="organizations__userInfo__right pl8">
+        <div class="organizations__userInfo__name pb8">
+          <div class="organizations__userInfo__name--url">
+            <a href="/">ga-ladder</a>
+          </div>
+        </div>
+        <div class="organizations__userInfo__status">
+          <div class="organizations__userInfo__Pcount">
+            0
+            <div class="organizations__userInfo__Punit">
+              posts
+            </div>
+          </div>
+          <div class="organizations__userInfo__Pcount">
+            0
+            <div class="organizations__userInfo__Punit">
+              contributions
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="organizations__coInfo">
+      <a class="organizations__coInfo__item" href="/">
+        <i class="fa fa-fw fa-list-ul"></i>
+        フィード
+      </a>
+      <a class="organizations__coInfo__item organizations__coInfo__item--selected" href="/">
+        <i class="far fa-building"></i>
+        Organization一覧
+      </a>
+      <a class="organizations__coInfo__item" href="/">
+        <i class="fas fa-chart-line"></i>
+        人気の投稿
+      </a>
+      <a class="organizations__coInfo__item" href="/">
+        <i class="far fa-calendar-alt"></i>
+        Advent Calendar
+      </a>
+    </div>
+  </div>
+
+</div>
