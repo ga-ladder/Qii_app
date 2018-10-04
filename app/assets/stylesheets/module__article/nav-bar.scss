@@ -1,6 +1,9 @@
 @import '../config/reset.scss';
 @import '../config/color.scss';
 .header{
+  a:visited {
+    color: white;
+  }
   width: 100vw;
   height:56px;
   padding:0 16px;

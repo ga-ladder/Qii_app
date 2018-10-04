@@ -1,0 +1,33 @@
+.footer{
+  a:visited{
+    color: #337ab7;
+  }
+  ul li{
+    display: inline;
+  }
+  &__inner{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  &__container{
+    border-top: solid #eee 1px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+  &__links{
+    &--left{
+      float: left;
+    }
+    &--right{
+      float: right;
+    }
+  }
+  &__link{
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 13px;
+  }
+}
