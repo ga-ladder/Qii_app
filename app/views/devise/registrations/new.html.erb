@@ -1,0 +1,42 @@
+<div class="user-session__container">
+  <h1 class="user-session--title">
+    Qiitaへようこそ!
+  </h1>
+  <h3 class="user-session--subtitle">新規登録(無料)して利用を開始しましょう。</h3>
+  <hr class="mt16 mb16 hr">
+  <div class="user-session__left-content">
+    <div class="user-session__left-content">
+      <% companyList = ["GitHub", "Twitter", "Google"] %>
+      <% companyList.each do |companyname| %>
+      <div class="user-session__social-login">
+        <div class="user-session--<%= companyname.downcase %>Login">
+          <i class="fab fa-<%= companyname.downcase %>"></i>
+          <%= companyname %>アカウントで登録
+        </div>
+      </div>
+      <% end %>
+      <p class="user-session--caution">
+        Qiitaが許可無くTwitterに投稿することはありません。
+      </p>
+      <div class="user-session__guide arrange-leftside">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+  <div class="user-session__right-content">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+      <%= f.text_field :name , placeholder: "ユーザ名", class: 'field mb16'%>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: 'field mb16' %>
+      <% if @minimum_password_length %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード 最小#{ @minimum_password_length }文字", class: 'field mb16'%>
+      <% end %>
+      <p class="user-session--caution">
+        利用規約に同意のうえ、「利用規約に同意して登録」ボタンを押してください。
+      </p>
+      <div class="actions">
+        <%= f.submit "利用規約に同意して登録", class: 'user-session__action mb16' %>
+      </div>
+    <% end %>
+  </div>
+</div>
