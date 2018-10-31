@@ -34,7 +34,10 @@
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    width: 65%;
+    width: 100%;
+    @media(min-width: 768px){
+      width: 65%;
+    }
   }
   &__left-content{
     overflow: hidden;

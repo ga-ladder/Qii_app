@@ -4,14 +4,26 @@
   </h1>
   <hr class="mt16 mb16 hr">
   <div class="user-session__left-content">
-    <% companyList = ["GitHub", "Twitter", "Google"] %>
-    <% companyList.each do |companyname| %>
+    <%= link_to user_github_omniauth_authorize_path do %>
     <div class="user-session__social-login">
-      <div class="user-session--<%= companyname.downcase %>Login">
-        <i class="fab fa-<%= companyname.downcase %>"></i>
-        <%= companyname %>アカウントでログイン
+      <div class="user-session--githubLogin">
+        <i class="fab fa-github"></i>
+        Githubアカウントでログイン
       </div>
     </div>
+    <% end %>
+    <div class="user-session__social-login">
+      <div class="user-session--twitterLogin">
+        <i class="fab fa-twitter"></i>Twitter
+      </div>
+    </div>
+    <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+      <div class="user-session__social-login">
+        <div class="user-session--googleLogin">
+          <i class="fab fa-google"></i>
+          Googleアカウントでログイン
+        </div>
+      </div>
     <% end %>
     <div class="user-session__guide arrange-leftside">
       <%= render "devise/shared/links" %>
@@ -19,7 +31,7 @@
   </div>
   <div class="user-session__right-content">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= f.text_field :login, placeholder: "メールアドレスもしくはユーザ名", class: 'field mb16' %>
+      <%= f.text_field :login, autofocus: true, placeholder: "メールアドレスもしくはユーザ名", class: 'field mb16' %>
       <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: 'field'%>
       <div class="arrange-leftside mb16">
         <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>

@@ -6,6 +6,7 @@ def after_sign_out_path_for(resource)
   "/users/sign_in"
 end
 
+
 protected
 
   def configure_permitted_parameters

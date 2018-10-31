@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
+  devise_for :users, controllers: {
+      omniauth_callbacks: "users/omniauth_callbacks"
+  }
   root 'articles#index'
-  get 'articles' => 'articles#index'
-  get 'show' => 'articles#show'
-  get 'organizations' => 'organizations#index'
-  get 'organizations/show' => 'organizations#show'
+  resources 'articles', only: [:index, :show]
+  resources 'organizations', only: [:index, :show]
+  resources 'users'
 end

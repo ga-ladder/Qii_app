@@ -1,17 +1,54 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, authentication_keys: [:login]
+  devise :database_authenticatable, :registerable, :trackable,
+  :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2, :github], authentication_keys: [:login]
+
   validates :name, presence: :true, uniqueness: { case_sensitive: false }
-  validates_format_of :name, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
+  validates_format_of :name, with: /^[a-zA-Z0-9_\-\.]*$/, :multiline => true
 
   attr_writer :login
+
+
 
   def login
     @login || self.name || self.email
   end
+# ----------Authen.-----------
+  def self.find_for_google(auth)
+    user = User.find_by(email: auth.info.email)
+    # name = auth.info.name.split('@')[0] auth.info.nameの代わり
+    unless user
+      user = User.create(
+        name: auth.info.email.split('@')[0],
+        email: auth.info.email,
+        provider: auth.provider,
+        uid: auth.uid,
+        token: auth.credentials.token,
+        password: Devise.friendly_token[0, 20],
+        meta: auth.to_yaml
+        )
+    end
+    user
+  end
 
+  def self.find_for_github_oauth(auth, signed_in_resource=nil)
+    user = User.find_by(email: auth.info.email)
+    unless user
+      user = User.create(
+        name: auth.info.nickname,
+        email: auth.info.email,
+        provider: auth.provider,
+        uid: auth.uid,
+        token: auth.credentials.token,
+        password: Devise.friendly_token[0, 20],
+        meta: auth.to_yaml
+        )
+    end
+    user
+  end
+
+  protected
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)

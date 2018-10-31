@@ -48,6 +48,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'pry-rails'
 end
 
 group :test do
@@ -63,3 +64,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'compass'
 gem 'devise'
+# authentication
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-github'
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
+
+
