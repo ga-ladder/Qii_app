@@ -25,12 +25,14 @@
   </div>
   <div class="user-session__right-content">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
       <%= f.text_field :name , placeholder: "ユーザ名", class: 'field mb16'%>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: 'field mb16' %>
       <% if @minimum_password_length %>
         <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード 最小#{ @minimum_password_length }文字", class: 'field mb16'%>
       <% end %>
+      <%= devise_error_messages! %>
+      <%= flash[:recaptcha_error] %>
+      <%= recaptcha_tags %>
       <p class="user-session--caution">
         利用規約に同意のうえ、「利用規約に同意して登録」ボタンを押してください。
       </p>

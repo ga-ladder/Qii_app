@@ -126,7 +126,11 @@
             </div>
           </div>
           <ul>
-            <li><%  current_user.name %></li>
+            <%= link_to  user_path(current_user.id) do %>
+              <li>
+                <%= current_user.name %>
+              </li>
+            <% end %>
             <div class="line"></div>
             <li>下書き一覧</li>
             <li>編集リクエスト一覧</li>
