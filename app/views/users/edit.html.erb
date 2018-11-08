@@ -1,0 +1,32 @@
+<div class="screen">
+<div class="registration-header__container">
+  <div class="registration-header__steps">
+    <span class="active">1. ユーザー登録</span>
+    <i class="fa fa-angle-right registrationHeader_angle"></i>
+    <span>2. タグをフォロー</span>
+    <i class="fa fa-angle-right registrationHeader_angle"></i>
+    <span>3. ユーザーをフォロー</span>
+  </div>
+</div>
+
+<div class="user-session__container">
+  <h1 class="user-session--title">
+    Qiitaへようこそ!
+  </h1>
+  <h3 class="user-session--subtitle">新規登録して利用を開始しましょう。</h3>
+  <div style="grid-column: 1 / 3">
+    <%= form_for @user do |f| %>
+      <%= f.label :name, "ユーザ名", class: 'label' %>
+      <%= f.text_field :name, value: @user.name, class: 'field mb16'%>
+      <%= f.label :email, "メールアドレス" ,class: 'label' %>
+      <%= f.email_field :email, autofocus: true, value: @user.email, class: 'field mb16', disabled: true %>
+      <p class="user-session--caution">
+        利用規約に同意のうえ、「利用規約に同意して登録」ボタンを押してください。
+      </p>
+      <div class="actions">
+        <%= f.submit "利用規約に同意して登録", class: 'user-session__action mb16' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>

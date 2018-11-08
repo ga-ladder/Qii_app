@@ -1,17 +1,19 @@
 <!-- header -->
-<%= render 'header' %>
-
+<%= render 'layouts/header' %>
 <div class="home-container px16 pt32">
   <div class="main-content">
     <!-- left bar -->
     <div class="main-content__l">
       <div class="main-content__l--trend active">
+        <i class="fas fa-chart-line"></i>
         トレンド
       </div>
       <div class="main-content__l--timeline">
+        <i class="far fa-list-alt"></i>
         タイムライン
       </div>
       <div class="main-content__l--tagfeed">
+        <i class="fas fa-tags"></i>
         タグフィード
       </div>
     </div>
@@ -37,57 +39,42 @@
         </div>
       </div>
       <div>
+        <!-- necessary 20items-->
+      <% (1..6).to_a.each do |content| %>
         <div class="tr-Item">
-          <a class="tr-Item__userImage">icon</a>
+          <a class="tr-Item__userImage">
+            <img src="https://qiita-image-store.s3.amazonaws.com/0/159680/profile-images/1490964068" alt="sensuikan1973">
+          </a>
           <div class="tr-Item__body">
-            <div class="tr-Item__title">コンテンツ1</div>
+            <div class="tr-Item__title">
+              めっっっっっっっっっっっっっっちゃ長いコンテンツ1
+            </div>
             <div class="tr-Item__meta">
               <span>by
-                <a class="tr-Item__author"> １１</a>
+                <a class="tr-Item__author"> 32</a>
               </span>
               <time>
                 "2 days"
                 " ago"
               </time>
               <div class="tr-Item__likeCount">
-                <span class="fa fa-thumbs-up mr-1of2">
-                  ::before
-                </span>
+                <i class="fa fa-thumbs-up mr-1of2">
+                </i>
                 "878"
               </div>
             </div>
           </div>
         </div>
-
         <div class="tr-Item">
-          <a class="tr-Item__userImage">icon</a>
+          <a class="tr-Item__userImage">
+            <img src="https://qiita-image-store.s3.amazonaws.com/0/189343/profile-images/1520164422" alt="ymy2642">
+          </a>
           <div class="tr-Item__body">
-            <div class="tr-Item__title">めっっっっっっっっっっっっっっちゃ長いコンテンツ1</div>
-            <div class="tr-Item__meta">
-              <span>by
-                <a class="tr-Item__author"> １１</a>
-              </span>
-              <time>
-                "2 days"
-                " ago"
-              </time>
-              <div class="tr-Item__likeCount">
-                <span class="fa fa-thumbs-up mr-1of2">
-                  ::before
-                </span>
-                "878"
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tr-Item"><!-- necessary 20items-->
-          <a class="tr-Item__userImage">icon</a>
-          <div class="tr-Item__body">
-            <div class="tr-Item__title">コンテンツ1</div>
+            <a class="tr-Item__title" href="/show">コンテンツ1</a>
             <div class="tr-Item__meta">
               <span class="tr-Item__new">new</span>
               <span>by
-                <a class="tr-Item__author"> １１</a>
+                <a class="tr-Item__author"> 11</a>
               </span>
               <time>
                 "2 days"
@@ -95,13 +82,13 @@
               </time>
               <div class="tr-Item__likeCount">
                 <span class="fa fa-thumbs-up mr-1of2">
-                  ::before
                 </span>
                 "878"
               </div>
             </div>
           </div>
         </div>
+      <% end %>
       </div>
     </div>
     <!-- right bar -->
@@ -125,38 +112,73 @@
             </div>
           </div>
         </div>
+        <% (1..10).to_a.each.with_index(1) do |user, rank| %>
         <div class="rank-userList__content">
-          1.
-            □ ＠account
-            865 Contribution
+          <div class="rank-userList__info">
+            <%= rank %>
+            <img alt="" class="px16 rank-userList__img" src="https://qiita-image-store.s3.amazonaws.com/0/106401/profile-images/1494858105">
+            <div class="rank-userList__userName pr8">
+              ＠account
+            </div>
+            <div class="rank-userList__contribution">
+              <div class="rank-userList__contribution--count">
+                865
+              </div>
+              Contribution
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="rank-userList p16">
+        <div class="rank-userList__header mb16">
+          <div class="rank-userList__label">
+            タグランキング
+          </div>
+          <div class="rank-userList__tab">
+            <div class="rank-userList__tab--Item is-active">
+              1日
+            </div>
+            <div class="rank-userList__tab--Item">
+              週間
+            </div>
+            <div class="rank-userList__tab--Item">
+              月間
+            </div>
+          </div>
+        </div>
+        <% (1..10).to_a.each.with_index(1) do |user, rank| %>
+        <div class="rank-userList__content">
+          <div class="rank-userList__info">
+            <%= rank %>
+            <img alt="" class="px16 rank-userList__img" src="https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/bcef5ec765c6eb84e5ec3300ce1ff16850bb3e14/medium.jpg?1512821048">
+            <div class="rank-userList__userName pr8">
+              python
+            </div>
+            <div class="rank-userList__contribution">
+              <div class="rank-userList__contribution--count">
+                50
+              </div>
+              posts
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="rank-userList p16">
+        <div class="rank-userList__header mb16">
+          <div class="rank-userList__label">
+            コミュニティスポンサー
+          </div>
+        </div>
+        <div class="rank-userList__content">
+          <a  target="_blank" href="https://di-v.co.jp/">
+            <img alt="株式会社div" src="https://di-v.co.jp/wp-content/themes/div/library/images/logo.svg" scale="0">
+          </a>
         </div>
       </div>
-      1.
-        □ ＠account
-        865 Contribution
-      1.
-        □ ＠account
-        865 Contribution
-
-      コニュニティスポンサー
-        icon1
-        icon2
-        icon3
-        コミュニティスポンサー
     </div>
   </div>
 </div>
-<!-- footer -->
-<div class="footer px16 pt8 pb16">
-  <div class="footer__container">
-    <ul class="footer__stat">
-      <li class="mr8">© 2011-2018 Increments Inc.</li>
-      <li class="mr8">利用規約</li>
-      <li class="mr8">ガイドライン</li>
-      <li class="mr8">プライバシー</li>
-      <li class="mr8">ヘルプ</li>
-    </ul>
-    Qiitaとは ユーザー タグ 投稿 ブログ API Qiita:Team 御意見
-  </div>
-</div>
+
 

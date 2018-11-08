@@ -3,7 +3,6 @@
 
 .main-content{
   &__c{
-    width: 100%;
     flex-grow: 1;
     min-width: 0;
     background-color: #fff;
@@ -48,7 +47,6 @@
 
 .tr-Item{
   display: flex;
-  width: 100%;
   font-size: 1.4rem;
   border-bottom: 1px solid #e8e8e8;
   padding: 16px;

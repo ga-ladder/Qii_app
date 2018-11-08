@@ -1,0 +1,112 @@
+<!-- header -->
+<%= render 'layouts/header' %>
+<div id="main" class="show-organization">
+
+<div class="show-organization__container">
+  <div class="show-organization__header">
+    <div class="show-organization__header--info">
+      <div class="show-organization__header--icon">
+        <img alt="" itemprop="logo" src="https://s3-ap-northeast-1.amazonaws.com/qiita-organization-image/ebfa897a4e615464b097a72b15235cd1822a88af/original.jpg?1526371156">
+      </div>
+      <div class="show-organization__header--meta">
+        <h1>
+          AliEaters
+        </h1>
+        https://alibabacloud.connpass.com
+      </div>
+      <div class="show-organization__header--status">
+         179
+        投稿
+         2057
+        いいね
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="show-organization__body">
+    <div class="show-organization__body__nav">
+      <ul class="show-organization__body__nav__items">
+      <li class="show-organization__body__nav__item nav-active">
+        About
+      </li>
+      <li class="show-organization__body__nav__item">
+        アクティビティ
+      </li>
+      <li class="show-organization__body__nav__item">
+        メンバー19
+      </li>
+      </ul>
+    </div>
+    <div class="show-organization__body--row">
+      <div class="show-organization__body__info">
+        <h3 class="show-organization__body__name">
+          AliEatersについて
+        </h3>
+        <div class="show-organization__body__description">
+          Alibaba Cloudを上手に使うためのノウハウの共有を目的としたコミュニティ
+        </div>
+        <div class="show-organization__body__detail">
+          <img alt="" class="show-organization__body__img" src="https://s3-ap-northeast-1.amazonaws.com/qiita-organization-image/ac9523f53fdc357c9c76bd8c54c00c3c5dcad850/original.jpg?1526371156">
+          <ul class="show-organization__body__adress">
+            <li class="show-organization__body__item">
+            rena@mobingi.com
+            </li>
+            <li class="show-organization__body__item">
+            https://alibabacloud.connpass.com
+            </li>
+            <li class="show-organization__body__item">
+            東京都港区元赤坂1-3-9 K-Front5F
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="show-organization__body__side-bar">
+        <div class="show-organization__body__side-bar__container">
+          <div class="show-organization__body__side-bar__title">
+            メンバー
+          </div>
+          <ul>
+            <% (1..20).to_a.each do |icon| %>
+            <li class="show-organization__body__side-bar__item">
+              <a>
+                <img alt="" class="show-organization__body__side-bar__icon" itemprop="image" src="https://qiita-image-store.s3.amazonaws.com/0/259/profile-images/1493477913" width="24" height="24">
+              </a>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="show-organization__body__side-bar__container">
+          <div class="show-organization__body__side-bar__title">
+            利用技術
+          </div>
+          Alibaba Cloud, PHP, Go, SDK, Ruby
+        </div>
+        <div class="show-organization__body__side-bar__container">
+          <div class="show-organization__body__side-bar__title">
+            人気の投稿
+          </div>
+          <% (1..5).to_a.each do |icon| %>
+            <div class="show-organization__body__side-bar__articleitem">
+              <div>
+                <img alt="" class="show-organization__body__side-bar__icon" src="https://qiita-image-store.s3.amazonaws.com/0/259/profile-images/1493477913" width="16" height="16">
+                AWSアカウント作ったらこれだけはやっとけ！IAMユーザーとAuthyを使ったMFAで2段階認証
+              </div>
+              <div class="show-organization__body__side-bar__author">
+                by yoshidashingo
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+</div>
+
+</div>

@@ -1,0 +1,134 @@
+.show-organization{
+
+&__container{
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+&__header{
+  padding: 20px 0 70px;
+  background-color: #fafafa;
+  -webkit-font-smoothing: antialiased;
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: 75% 25%;
+  -ms-grid-columns: 75% 25%;
+  &--info{
+
+  }
+  &--icon{
+    width: 60px;
+    height: 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+&__body{
+  &__nav{
+    border-bottom: 1px solid #ddd;
+    background-color: #fafafa;
+    &__items{
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 33% 33% 33%;
+    -ms-grid-columns: 33% 33% 33%;
+    text-align: center;
+    width: 30%;
+    margin-right: auto;
+    }
+    &__item{
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+      color: #555;
+      cursor: pointer;
+      padding-bottom: 15px;
+      padding-top: 10px;
+      position: relative;
+      min-height: 1px;
+      padding-left: 10px;
+      padding-right: 10px;
+      display: inline-block;
+    }
+  }
+  &--row{
+    margin-top:20px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 75% 25%;
+    -ms-grid-columns: 75% 25%;
+    // grid-template-rows: minmax(270px,auto) 1fr;
+    // -ms-grid-rows: minmax(270px,auto) 1fr;
+  }
+  &__info{
+    border: 1px solid #ddd;
+    position: relative;
+    min-height: 1px;
+    padding: 20px;
+  }
+  &__description{
+    margin-top: 8px;
+  }
+  &__detail{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 15px;
+  }
+  &__img{
+    width: 240px;
+    max-height: 240px;
+  }
+  &__adress{
+    color: #555;
+    font-size: 14px;
+  }
+
+  &__side-bar{
+    position: relative;
+    min-height: 1px;
+    padding-left: 20px;
+    padding-right: 10px;
+    &__container{
+      border-top: 1px solid #ddd;
+      margin-bottom: 12px;
+      padding-top: 12px;
+    }
+    &__title{
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    &__item{
+      display: inline-block;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    &__articleitem{
+      width: 100%;
+      border-bottom: 1px dotted #ddd;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+    &__icon{
+      border-radius: 3px;
+      display: inline-block;
+      line-height: 1;
+      overflow: hidden;
+      vertical-align: middle;
+    }
+    &__author{
+      display: inline;
+      margin-right: 5px;
+      color: #999;
+    }
+  }
+}
+
+
+}

@@ -1,0 +1,154 @@
+<div class="header">
+  <div class="nav-bar">
+    <div class="nav-bar__l">
+      <a class="nav-bar__l--icon" href="/articles">
+        Qiita
+      </a>
+        <ul>
+          <div class="nav-bar__l--tab--icon">
+            <li class="dropdown_container">
+                <span class="fas fa-caret-down nav-bar__l--tab--icon--fa"></span>
+              <ul>
+                <a href="/">
+                  <li>
+                    <i class="fas fa-check"></i>
+                    Qiita
+                  </li>
+                </a>
+                <div class="line"></div>
+                <span class="no_loginTeam">ログイン中のチームがありません</span>
+                <li>
+                  <i class="fas fa-door-open"></i>
+                  Qiita:Teamにログイン...
+                </li>
+              </ul>
+            </li>
+          </div>
+        </ul>
+
+      <ul>
+        <li class="dropdown_container">
+          <div class="nav-bar__l--tab">
+            <div class="nav-bar__l--tab--home">
+              ホーム
+              <i class="fas fa-caret-down"></i>
+            </div>
+          </div>
+          <ul>
+            <li>
+              <i class="fas fa-chart-line"></i>
+              トレンド
+            </li>
+            <div class="line"></div>
+            <li>
+              <i class="far fa-list-alt"></i>
+              タイムライン
+            </li>
+            <div class="line"></div>
+            <li>
+              <i class="fas fa-tags"></i>
+              タグフィールド
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul>
+        <li class="dropdown_container">
+          <div class="nav-bar__l--tab">
+            <div class="nav-bar__l--tab--com">
+              コミュニティ
+              <i class="fas fa-caret-down"></i>
+            </div>
+          </div>
+          <ul>
+            <li>
+              <i class="fas fa-users"></i>
+              ユーザー一覧
+            </li>
+            <li>
+              <a href="/organizations/">
+                <i class="fas fa-building"></i>
+                organization一覧
+              </a>
+            </li>
+            <li>
+              <i class="fas fa-calendar-alt"></i>
+              アドベントカレンダー
+            </li>
+            <div class="line"></div>
+            <li>
+              <i class="far fa-comments"></i>
+              Qiitadon(β)
+            </li>
+            <div class="line"></div>
+            <li>
+              <i class="fas fa-book"></i>
+              コミュニティガイドライン
+            </li>
+            <li>
+              <i class="fas fa-book"></i>
+              良い記事を書くために
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="nav-bar__l--searchbox">
+        <i class="fas fa-search fa-gray"></i>
+        <input id="search-field" type="text" class="link_no_underline" placeholder="キーワードを入力" />
+      </div>
+    </div>
+
+
+    <div class="nav-bar__r">
+    <% if !(current_user.nil?) %>
+      <div class="nav-bar__r--link">
+      <button>
+        <i class="fas fa-folder-open fa-white"></i>
+      </button>
+        ストック一覧
+      </div>
+      <div class="nav-bar__r--button">
+        投稿する
+      </div>
+      <div class="nav-bar__r--tab">
+        0
+      </div>
+      <ul>
+        <li class="dropdown_container">
+          <div class="nav-bar__r__loginUser">
+            <div class="nav-bar__r__loginUser--icon">
+              <img src="https://avatars3.githubusercontent.com/u/8581682?v=4"/ >
+            </div>
+            <div class="nav-bar__r__loginUser--down ml8">
+              <i class="fas fa-caret-down"></i>
+            </div>
+          </div>
+          <ul>
+            <%= link_to  user_path(current_user.id) do %>
+              <li>
+                <%= current_user.name %>
+              </li>
+            <% end %>
+            <div class="line"></div>
+            <li>下書き一覧</li>
+            <li>編集リクエスト一覧</li>
+            <div class="line"></div>
+            <li>設定</li>
+            <li>ヘルプ</li>
+            <div class="line"></div>
+            <li>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'li'%>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    <% else %>
+          <%= link_to "登録する", new_user_registration_path, method: :get, class: 'nav-bar__r--notSigninButton'%>
+          <%= link_to "ログイン", new_user_session_path, method: :get, class: 'nav-bar__r--notLoginButton'%>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
