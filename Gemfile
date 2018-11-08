@@ -71,4 +71,7 @@ gem 'omniauth-github'
 gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem 'recaptcha', require: "recaptcha/rails"
 
+# githubからアラートが来たから一応入れておく
+gem "loofah", ">= 2.2.3"
+
 
