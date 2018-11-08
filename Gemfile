@@ -69,5 +69,6 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-github'
 gem 'dotenv-rails', :require => 'dotenv/rails-now'
+gem 'recaptcha', require: "recaptcha/rails"
 
 

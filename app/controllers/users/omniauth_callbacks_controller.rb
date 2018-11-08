@@ -19,8 +19,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def github
     @user = User.find_for_github_oauth(request.env["omniauth.auth"])
-    binding.pry
-
     if @user.persisted?
       if @user.sign_in_count == 0
         redirect_to edit_user_path(@user)
@@ -34,4 +32,3 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 end
-
