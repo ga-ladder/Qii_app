@@ -1,0 +1,44 @@
+.registrationPage {
+    padding-bottom: 60px;
+}
+@media (min-width: 768px){
+  .screen {
+      width: 740px;
+  }
+}
+@media (min-width: 992px){
+  .screen {
+      width: 1000px;
+  }
+}
+@media (min-width: 1200px){
+  .screen {
+      width: 1160px;
+  }
+}
+
+.screen {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.registration-header{
+  &__container{
+    margin-top: 30px;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  &__steps{
+    float: right;
+    color: #999;
+    font-size: 18px;
+    line-height: 50px;
+  }
+}
+
+.active{
+  color: #555;
+  font-weight: 700;
+}

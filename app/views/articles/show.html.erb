@@ -1,21 +1,11 @@
 <!-- https://qiita.com/morishitter/items/c4aa500929f2de441bfd -->
+<!-- header -->
+<%= render 'layouts/header' %>
 <div class="home-container px16 pt32">
 <div class="container"> <!-- 記事部分全体 (背景色がグレー) -->
 
   <!-- 左側に表示される「いいね」「ストック」ボタン -->
-  <div class="stickyMenu">
-    <div class="stickyMenu__likeCount"><a>100</a></div>
-    <div class="stickyMenu__item">
-      <div class="stickyMenu__like fa-fm-green">
-        <button><i class="far fa-thumbs-up fa-green"></i></button>
-      </div>
-    </div>
-    <div class="stickyMenu__item">
-      <div class="stickyMenu__stock fa-bg-gray">
-        <button><i class="fas fa-folder-open fa-white"></i></button>
-      </div>
-    </div>
-  </div>
+<%= render 'articles/module/sub-menu' %>
   <!-- 記事部分 (背景色が白) -->
   <div class="main p16">
     <div class="main__article">
