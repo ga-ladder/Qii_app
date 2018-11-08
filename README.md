@@ -1,36 +1,6 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # Qii_app
 
 # テスト項目
-## create user
-### 普通に作った人
-### 別のプロバイダを通じた人
-#### google
-#### github
-#### twitter
 
 <!-- pictweetより
 1.nicknameとemail、passwordとpassword_confirmationが存在すれば登録できること
