@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources 'articles', only: [:index, :show]
   resources 'organizations', only: [:index, :show]
   resources 'users'
+
+  get '/settings/account', to: 'settings#account'
 end

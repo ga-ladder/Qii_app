@@ -1,0 +1,21 @@
+.settings{
+  display: -webkit-flex;
+  display: block;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  background-color: #fafafa;
+  &_container{
+    max-width: 1100px;
+    margin: 0px auto;
+    display: grid;
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 25% 75%;
+    -ms-grid-columns: 25% 75%;
+  }
+  &_leftbar{}
+  &_rightbar{}
+}
