@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources 'users'
 
   get '/settings/account', to: 'settings#account'
+  get '/settings/profile', to: 'settings#profile'
 end

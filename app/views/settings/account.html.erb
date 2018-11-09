@@ -4,27 +4,53 @@
 <!-- left side -->
 <div class="settings p24">
 <div class="settings_container">
-  <div class="settings_leftbar">
-    公開用プロフィール
-    アカウント
-    パスワード
-    メールアドレスと通知
-    セキュリティ
-    二段階認証
-    アプリケーション
-    ミュート設定
-    Googleアナリティクス設定
-    Organization設定
+  <div class="settings_menucontainer">
+    <div class="settings_menubar">
+      <div class="settings__menuIcon">
+      公開用プロフィール
+      </div>
+      <div class="settings__menuIcon settings__menuIcon--active">
+      アカウント
+      </div>
+      <div class="settings__menuIcon">
+      パスワード
+      </div>
+      <div class="settings__menuIcon">
+      メールアドレスと通知
+      </div>
+      <div class="settings__menuIcon">
+      セキュリティ
+      </div>
+      <div class="settings__menuIcon">
+      二段階認証
+      </div>
+      <div class="settings__menuIcon">
+      アプリケーション
+      </div>
+      <div class="settings__menuIcon">
+      ミュート設定
+      </div>
+      <div class="settings__menuIcon">
+      Googleアナリティクス設定
+      </div>
+      <div class="settings__menuIcon">
+      Organization設定
+      </div>
+    </div>
   </div>
+<div class="settings_rightbar">
 
-  <div class="settings_rightbar">
-ga-ladder
-ga-ladder アカウント
-/
-アカウント
-アイコン
+<div class="settings_main">
+  <div class="settings__title">
+    ga-ladder
+    ga-ladder アカウント
+    /
+    アカウント
+  </div>
+    <!-- formfor -->
+<!-- アイコン
 
-<!-- GitHub
+GitHub
 sdlkfj3w0ao2@outlook.jp
 Gravatar
 画像
@@ -40,17 +66,30 @@ GitHubの紐付けを解除
 Twitterログイン
 Twitterアカウントと紐付けると、 技術情報をTwitterにも同時に投稿することができるようになります。
 Googleログイン
-言語設定
-
+言語設定 -->
+<!-- 更新する -->
+<!-- form_tag -->
+<div class="settings__smalltitle">
  Qiita:Team専用モード
+</div>
+<div class="settings__smalltitle--Heading">
 Qiita:Team専用モードを有効にすると、このアカウントはQiita:Teamのみで利用可能となり、「Qiita - プログラマの技術情報共有サービス」の利用ができなくなります。
+</div>
 Qiita:Team専用モードを有効にする
+
+<div class="settings__smalltitle">
  アカウント削除
+</div>
+<div class="settings__smalltitle--Heading">
 一度アカウントを削除すると、二度と元に戻せません。十分ご注意ください。
-アカウントを削除する -->
-  </div>
+</div>
+アカウントを削除する
+
 </div>
 </div>
 
+
+</div>
+</div>
 <%= render 'layouts/footer' %>
 </div>
