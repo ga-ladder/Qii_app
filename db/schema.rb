@@ -13,6 +13,8 @@
 ActiveRecord::Schema.define(version: 2018_11_09_101646) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "content", limit: 4294967295, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
