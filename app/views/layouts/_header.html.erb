@@ -1,7 +1,7 @@
 <div class="header">
   <div class="nav-bar">
     <div class="nav-bar__l">
-      <a class="nav-bar__l--icon" href="/articles">
+      <a class="nav-bar__l--icon" href="/">
         Qiita
       </a>
         <ul>
@@ -62,16 +62,18 @@
             </div>
           </div>
           <ul>
+            <%= link_to users_path do %>
+              <li>
+                <i class="fas fa-users"></i>
+                ユーザー一覧
+              </li>
+            <% end %>
+            <%= link_to organizations_path do %>
             <li>
-              <i class="fas fa-users"></i>
-              ユーザー一覧
+              <i class="fas fa-building"></i>
+              organization一覧
             </li>
-            <li>
-              <a href="/organizations/">
-                <i class="fas fa-building"></i>
-                organization一覧
-              </a>
-            </li>
+            <% end %>
             <li>
               <i class="fas fa-calendar-alt"></i>
               アドベントカレンダー
@@ -135,7 +137,9 @@
             <li>下書き一覧</li>
             <li>編集リクエスト一覧</li>
             <div class="line"></div>
-            <li>設定</li>
+            <%= link_to settings_account_path(current_user) do %>
+              <li>設定</li>
+            <% end %>
             <li>ヘルプ</li>
             <div class="line"></div>
             <li>

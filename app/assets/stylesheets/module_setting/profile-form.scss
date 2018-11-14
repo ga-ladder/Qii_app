@@ -1,0 +1,60 @@
+.settings{
+  &__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2.4rem;
+    margin-bottom: 32px;
+  }
+  &__form{
+    display: block;
+    width: 100%;
+    font-size: 1.6rem;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    padding: 8px 16px;
+    cursor: text;
+    margin-top: .6em;
+    box-sizing: border-box;
+    &--sns{
+      width: 50%;
+      font-size: 1.6rem;
+      background-color: #fff;
+      border-radius: 3px;
+      border: none;
+      cursor: text;
+    }
+  }
+  &__formLabel{
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: currentColor;
+  }
+  &__formHelp{
+    font-size: 1.4rem;
+    color: #999;
+    margin-top: .6em;
+  }
+  &__form-container{
+    color: #555;
+    &:not(:first-child){
+      margin-top: 2.5em;
+    }
+  }
+  &__name-container{
+    justify-content: space-between;
+    align-items: stretch;
+    display: grid;
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 49% 49%;
+    -ms-grid-columns: 49% 49%;
+    &--child{
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.user-delete{
+  &__container{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    @media(min-width: 768px){
+      width: 65%;
+    }
+  }
+  &__title{
+    margin: 30px 0;
+    letter-spacing: 1px;
+    font-size: 36px;
+    font-weight: 400;
+  }
+  &__content{
+    display: block;
+  }
+  &__user-name{
+
+  }
+  &__password-input{
+  }
+  &__delete-button{
+  }
+}

@@ -6,7 +6,14 @@ Rails.application.routes.draw do
       # for reCaptcha
   }
   root 'articles#index'
-  resources 'articles', only: [:index, :show]
+  resources 'articles', only: [:show]
   resources 'organizations', only: [:index, :show]
-  resources 'users'
+  resources 'users', only:[:index, :show, :edit, :update, :destroy]
+
+  namespace :settings do
+    resources :accounts, only:[:show, :create, :update]
+    resources :profiles, only:[:show, :create, :update]
+  end
+
+  get '/delete/:id', to: 'settings#delete', as: 'user_delete'
 end

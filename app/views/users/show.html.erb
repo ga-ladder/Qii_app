@@ -2,85 +2,68 @@
 <%= render 'layouts/header' %>
 <!-- show page of users -->
 <div id="main" class="oneUser">
-  <div class="oneUser__container">
-    <div class="oneUser__row">
-      <div class="oneUser__profile">
-        <img class="mb16 oneUser__profile__icon" alt="" src="https://avatars3.githubusercontent.com/u/8581682?v=4">
-        <div class="oneUser__profile__header">
-          <h3>
-            <%= @user.name %>
-          </h3>
-        </div>
+  <div class="oneUser__container mt24">
+    <div class="oneUser__row oneUser__profile">
+      <% unless @user.profile.nil? then %>
+        <%= render 'users/layouts/user-profile-info/header' %>
+        <%= render 'users/layouts/user-profile-info/profile-items' %>
+      <% else %>
+        <img class="mb16 oneUser__profile__icon" alt="" src="http://chittagongit.com//images/android-profile-icon/android-profile-icon-25.jpg">
+        <h3>@<%= @user.name %></h3>
+      <% end %>
+      <% if current_user == @user %>
         <div class="oneUser__profile__info">
-          <%= link_to edit_user_registration_path(@user) do %>
+          <%= link_to settings_profile_path(current_user) do %>
             <i class="fas fa-cog"></i>
             プロフィールを編集する
           <% end %>
         </div>
-        <div class="oneUser__profile__info">
-          <div class="oneUser__profile__info__tagHeader">
-            <i class="fas fa-tag"></i>
-            フォロー中のタグ
-          </div>
-          <div class="onUser__info__body">
-            <ul class="tag-list">
-
-              <% (1..5).to_a.each do |tag| %>
-                <li class="tag-list__item">
-                  <a class="tag-list__label" href="/">
-                    <img class="tag-list__icon" src="https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/8908372b8c943d908e0ceef18e2a20711ccf5c06/thumb.jpg?1515774066">
-                    C++
-                  </a>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <% end %>
+        <%= render 'users/layouts/user-profile-info/profile-tags' %>
     </div>
-    <div class="oneUser__row">
-      <div class="oneUser__main">
-        <div class="oneUser__chart">
-          <div class="oneUser__chart__activity">
-          </div>
-          <ul class="oneUser__nav oneUser__nav__chart">
-            <li class="oneUser__nav--item nav-active">
-              <div class="oneUser__nav--count">
-                0
-              </div>
-              items
-            </li>
-            <li class="oneUser__nav--item">
-              <div class="oneUser__nav--count">
-                0
-              </div>
-              contribution
-            </li>
-            <li class="oneUser__nav--item">
-              <div class="oneUser__nav--count">
-                0
-              </div>
-              followers
-            </li>
-            <div class="">
-            </div>
-          </ul>
+    <div class="oneUser__row oneUser__main">
+      <div class="oneUser__chart">
+        <div class="oneUser__chart__activity">
         </div>
-        <ul class="oneUser__nav oneUser__nav__local">
+        <ul class="oneUser__nav oneUser__nav__chart">
           <li class="oneUser__nav--item nav-active">
-            最近の投稿 0
+            <div class="oneUser__nav--count">
+              0
+            </div>
+            items
           </li>
           <li class="oneUser__nav--item">
-            いいねした投稿
+            <div class="oneUser__nav--count">
+              0
+            </div>
+            contribution
           </li>
           <li class="oneUser__nav--item">
-            限定共有投稿
+            <div class="oneUser__nav--count">
+              0
+            </div>
+            followers
           </li>
-          <li class="oneUser__nav--item">
-            コメント
-          </li>
+          <div class="">
+          </div>
         </ul>
-        <p>ga-ladderさんの投稿はありません</p>
       </div>
+      <ul class="oneUser__nav oneUser__nav__local">
+        <li class="oneUser__nav--item nav-active">
+          最近の投稿 0
+        </li>
+        <li class="oneUser__nav--item">
+          いいねした投稿
+        </li>
+        <li class="oneUser__nav--item">
+          限定共有投稿
+        </li>
+        <li class="oneUser__nav--item">
+          コメント
+        </li>
+      </ul>
+      <p>ga-ladderさんの投稿はありません</p>
     </div>
+  </div>
 </div>
+<%= render 'layouts/footer' %>
