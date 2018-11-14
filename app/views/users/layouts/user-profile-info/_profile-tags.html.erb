@@ -1,0 +1,18 @@
+<div class="oneUser__profile__info">
+  <div class="oneUser__profile__info__tagHeader">
+    <i class="fas fa-tag"></i>
+    フォロー中のタグ
+  </div>
+  <div class="onUser__info__body">
+    <ul class="tag-list">
+      <% (1..5).to_a.each do |tag| %>
+        <li class="tag-list__item">
+          <a class="tag-list__label" href="/">
+            <img class="tag-list__icon" src="https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/8908372b8c943d908e0ceef18e2a20711ccf5c06/thumb.jpg?1515774066">
+            C++
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

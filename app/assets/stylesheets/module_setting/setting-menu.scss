@@ -1,0 +1,34 @@
+.settings{
+  &_menucontainer{
+    display: flex;
+  }
+  &_menubar{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 280px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1em;
+    background-color: #fff;
+    border: 1px solid transparent;
+    padding: 16px;
+  }
+  &__menuItem{
+    width: 100%;
+    font-weight: 400;
+    padding: 8px 0;
+    border-top: 1px solid #e8e8e8;
+    color: #555;
+    &--active{
+      font-weight: 700;
+    }
+  }
+  &__menuItem:first-child{
+    border-top: none;
+    padding-top: 0;
+  }
+  &__menuItem:active{
+    background-color: #eee;
+  }
+}

@@ -1,15 +1,20 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable, :trackable,
-  :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2, :github], authentication_keys: [:login]
+  devise  :database_authenticatable,
+          :registerable,
+          :trackable,
+          :recoverable,
+          :rememberable,
+          :validatable,
+          :omniauthable,
+          omniauth_providers: [:google_oauth2, :github],
+          authentication_keys: [:login]
+
+  has_one :profile, dependent: :destroy
 
   validates :name, presence: :true, uniqueness: { case_sensitive: false }
   validates_format_of :name, with: /^[a-zA-Z0-9_\-\.]*$/, :multiline => true
 
   attr_writer :login
-
-
 
   def login
     @login || self.name || self.email
@@ -17,7 +22,6 @@ class User < ApplicationRecord
 # ----------Authen.-----------
   def self.find_for_google(auth)
     user = User.find_by(email: auth.info.email)
-    # name = auth.info.name.split('@')[0] auth.info.nameの代わり
     unless user
       user = User.create(
         name: auth.info.email.split('@')[0],

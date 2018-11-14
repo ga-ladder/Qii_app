@@ -1,0 +1,30 @@
+<div class="settings_menucontainer">
+  <div class="settings_menubar">
+    <%= link_to '公開用プロフィール', settings_profile_path(current_user), class: 'settings__menuItem' %>
+    <%= link_to 'アカウント', settings_account_path(current_user),class: 'settings__menuItem' %>
+    <div class="settings__menuItem">
+    パスワード
+    </div>
+    <div class="settings__menuItem">
+    メールアドレスと通知
+    </div>
+    <div class="settings__menuItem">
+    セキュリティ
+    </div>
+    <div class="settings__menuItem">
+    二段階認証
+    </div>
+    <div class="settings__menuItem">
+    アプリケーション
+    </div>
+    <div class="settings__menuItem">
+    ミュート設定
+    </div>
+    <div class="settings__menuItem">
+    Googleアナリティクス設定
+    </div>
+    <div class="settings__menuItem">
+    Organization設定
+    </div>
+  </div>
+</div>

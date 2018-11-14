@@ -15,35 +15,7 @@
     grid-template-columns: 280px auto;
     -ms-grid-columns: 25% 75%;
   }
-  &_menucontainer{
-    display: flex;
-  }
-  &_menubar{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 280px;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 1em;
-    background-color: #fff;
-    border: 1px solid transparent;
-    padding: 16px;
-  }
-  &__menuIcon{
-    width: 100%;
-    font-weight: 400;
-    padding: 8px 0;
-    border-top: 1px solid #e8e8e8;
-    color: #555;
-    &--active{
-      font-weight: 700;
-    }
-  }
-  &__menuIcon:first-child{
-    border-top: none;
-    padding-top: 0;
-  }
+
   // main menu
   &_rightbar{
     display: flex;
@@ -57,58 +29,6 @@
     border: 1px solid transparent;
     padding: 32px;
   }
-  &__title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    font-size: 2.4rem;
-    margin-bottom: 32px;
-  }
-  &__form{
-    display: block;
-    width: 100%;
-    font-size: 1.6rem;
-    background-color: #fff;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    padding: 8px 16px;
-    cursor: text;
-    margin-top: .6em;
-  }
-  &__formLabel{
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: currentColor;
-  }
-  &__formHelp{
-    font-size: 1.4rem;
-    color: #999;
-    margin-top: .6em;
-  }
-  &__form-container{
-    color: #555;
-    &:not(:first-child){
-      margin-top: 2.5em;
-    }
-  }
-  &__name-container{
-    justify-content: space-between;
-    align-items: stretch;
-    display: grid;
-    -webkit-font-smoothing: antialiased;
-    display: grid;
-    display: -ms-grid;
-    grid-template-columns: 49% 49%;
-    -ms-grid-columns: 49% 49%;
-    &--child{
-      display: flex;
-    }
-  }
-
-
-
 
   &__smalltitle{
         display: block;

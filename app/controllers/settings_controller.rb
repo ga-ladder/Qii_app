@@ -1,6 +1,8 @@
 class SettingsController < ApplicationController
-  def account
+  def show
   end
-  def profile
+
+  def delete
+    @user = User.find(params[:id])
   end
 end

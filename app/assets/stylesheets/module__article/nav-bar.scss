@@ -221,6 +221,9 @@
     color: #23527c;
     text-decoration: none;
   }
+  li:active{
+    background-color: #bebebe;
+  }
   .li{
     display: block;
     font-size: 1.2rem;
