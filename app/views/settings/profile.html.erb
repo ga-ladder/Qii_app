@@ -1,0 +1,94 @@
+<!-- header -->
+<%= render 'layouts/header' %>
+<div class="bgGray">
+<!-- left side -->
+<div class="settings p24">
+<div class="settings_container">
+<%= render 'setting-menu' %>
+
+<div class="settings_main">
+  <div class="settings__title">
+    ga-ladder
+    ga-ladder アカウント
+    /
+    公開プロフィール
+  </div>
+  <div class="settings__form-container">
+    <div class="settings__formLabel">
+      名前
+    </div>
+    <div class="settings__name-container">
+      <div class="settings__name-container--child">
+        <input maximum="32" placeholder="名" class="settings__form" type="text" value="" name="user[first_name]" id="user_first_name"></div>
+      <div class="settings__name-container--child">
+        <input maximum="32" placeholder="姓" class="settings__form" type="text" value="" name="user[last_name]" id="user_last_name">
+      </div>
+    </div>
+  </div>
+  <div class="settings__form-container">
+    <div class="settings__formLabel">
+    公開メールアドレス
+    </div>
+  </div>
+  <div class="settings__form-container">
+    <label>
+      <input type="checkbox" value="1" name="user[public_email]" id="user_public_email">
+      メールアドレスを全体に公開する
+    </label>
+    <div class="settings__formHelp">
+    誰もがあなたのメールアドレス(sdlkfj3w0ao2@outlook.jp)を見れる状態になります。
+    <a href="">メールアドレスを変更</a>
+    </div>
+  </div>
+  <div class="settings__form-container">
+    <div class="settings__formLabel">
+    サイト/ブログ
+    </div>
+    <input class="settings__form" type="text" value="" name="" id="">
+  </div>
+  <div class="settings__form-container">
+    <div class="settings__formLabel">
+    所属している組織・会社
+    </div>
+    <input class="settings__form" type="text" value="" name="" id="">
+  </div>
+  <div class="settings__form-container">
+    <div class="settings__formLabel">
+    居住地
+    </div>
+    <textarea maximum="200" class="settings__form" type="text" value="" name="" id=""></textarea>
+  </div>
+  <div class="settings__form-container">
+    <div class="settings__formLabel">
+    自己紹介
+    </div>
+    <input class="settings__form" type="text" value="" name="" id="">
+        200文字以内
+  </div>
+  <div class="settings__form-container">
+    <div class="settings__formLabel">
+    Facebook ID
+    </div>
+    <input value="https://www.facebook.com/"class="settings__form" type="text" value="" name="" id="">
+  </div>
+  <div class="settings__form-container">
+    <div class="settings__formLabel">
+    LinkedIn ID
+    </div>
+    <input value="https://www.linkedin.com/in/"class="settings__form" type="text" value="" name="" id="">
+    LinkedInの公開プロフィールURLは こちらの方法 で設定できます。
+  </div>
+  <div class="settings__form-container">
+    <div class="settings__formLabel">
+    Google+ ID
+    </div>
+    <input value="https://plus.google.com/<ここに入れる>/post"class="settings__form" type="text" value="" name="" id="">
+    <div class="settings__formHelp">
+      紐付けを行うには Google+プロフィールページ のURLに含まれるIDを入力し、<br/>
+      Google+の寄稿先欄に "https://qiita.com/" を追加してください。
+    </div>
+  </div>
+</div>
+
+</div>
+</div>

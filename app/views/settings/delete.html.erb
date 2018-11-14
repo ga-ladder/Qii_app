@@ -1,0 +1,27 @@
+
+<div class="user-delete__container">
+  <h1 class="user-delete__title">
+    退会する
+  </h1>
+  <hr class="mt16 mb16 hr">
+  <div class="user-delete__content">
+    <p>退会処理を行うと、Qiitaでの活動内容（投稿したアイテム、ストックなど）が全て削除されます。</p>
+    <b>この処理は取り消しできません。</b>
+  </div>
+  <div>
+    <label>ユーザ名</label>
+    <a>
+      <img>
+      <span>@<%= @user.name %></span>
+    </a>
+  </div>
+  <label>パスワード：</label>
+  <% if current_user == @user %>
+    <%= link_to @user, method: :delete,
+                                  data: { confirm: "You sure?" } do %>
+      <button class="settings__submit settings__danger">退会する</button>
+    <% end %>
+  <% end %>
+</div>
+
+<%= render 'layouts/footer' %>

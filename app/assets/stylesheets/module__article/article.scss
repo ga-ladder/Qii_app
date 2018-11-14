@@ -3,16 +3,16 @@
 @import '../config/variable.scss';
 
 .container{
-    display: grid;
-    display: -ms-grid;
-    grid-template-columns: 80px calc(100% - 300px - 80px) 300px;
-    -ms-grid-columns: 80px calc(100% - 300px - 80px) 300px;
-    grid-template-rows: minmax(270px,auto) 1fr;
-    -ms-grid-rows: minmax(270px,auto)  1fr;
-    max-width: 1280px;
-    width: calc(100% - 50px);
-    margin-right: auto;
-    margin-left: auto;
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: 80px calc(100% - 300px - 80px) 300px;
+  -ms-grid-columns: 80px calc(100% - 300px - 80px) 300px;
+  grid-template-rows: minmax(270px,auto) 1fr;
+  -ms-grid-rows: minmax(270px,auto)  1fr;
+  max-width: 1280px;
+  width: calc(100% - 50px);
+  margin-right: auto;
+  margin-left: auto;
 }
 .stickyMenu {
   position: sticky;

@@ -1,0 +1,32 @@
+
+<% unless @user.profile.introduce.blank? %>
+  <div class="oneUser__profile__info">
+    <%= @user.profile.introduce %>
+  </div>
+<% end %>
+
+<div class="oneUser__profile__info">
+  <% @user.profile.attributes.each do | column, element | %>
+    <% unless element.blank? ||  on_mypage_except_column?(column) || element == 0 %>
+      <% if column.include?("_url") then %>
+        <div class="oneUser__profile__info__body" id=<%= column %>>
+          <% if column.include?("blog") then %>
+            <i class="fas fa-link"></i>
+          <% else %>
+            <i class="fab fa-<%= sns_fa(column) %>"></i>
+          <% end %>
+          <a href= <%= sns_url(column,element) %>><%= sns_url(column,element) %></a>
+        </div>
+      <% elsif column.include?("email") %>
+        <div class="oneUser__profile__body" id=<%= column %>>
+          <i class="far fa-envelope"></i>
+          <%= @user.email if element == 1 %>
+        </div>
+      <% else %>
+        <div class="oneUser__profile__body" id=<%= column %>>
+          <%= element %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

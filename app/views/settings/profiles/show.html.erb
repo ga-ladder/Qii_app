@@ -1,0 +1,105 @@
+<!-- header -->
+<%= render 'layouts/header' %>
+<div class="bgGray">
+<!-- left side -->
+<div class="settings p24">
+<div class="settings_container">
+<%= render 'settings/layouts/setting-menu' %>
+<div class="settings_rightbar">
+  <div class="settings_main">
+   <%= render 'settings/layouts/title-header', locals: { title: '公開プロフィール'.freeze} %>
+
+    <%= form_for [:settings, @profile] do |f| %>
+    <div class="settings__form-container">
+      <div class="settings__formLabel">
+        名前
+      </div>
+      <div class="settings__name-container">
+        <div class="settings__name-container--child">
+          <%= f.text_field :first_name, class: 'settings__form', id: 'user_first_name', placeholder: '名', maximum: 32 %>
+        </div>
+        <div class="settings__name-container--child">
+          <%= f.text_field :last_name, class: 'settings__form', id: 'user_last_name', placeholder: '姓', maximum: 32 %>
+        </div>
+      </div>
+    </div>
+    <div class="settings__form-container">
+      <div class="settings__formLabel">
+      公開メールアドレス
+      </div>
+    </div>
+    <div class="settings__form-container">
+      <label>
+        <%= f.check_box :open_email %>
+        メールアドレスを全体に公開する
+      </label>
+      <div class="settings__formHelp">
+      誰もがあなたのメールアドレス(<%= current_user.email %>)を見れる状態になります。
+      <a href="">メールアドレスを変更</a>
+      </div>
+    </div>
+    <div class="settings__form-container">
+      <div class="settings__formLabel">
+      サイト/ブログ
+      </div>
+      <%= f.text_field :blog_url, class: 'settings__form' %>
+    </div>
+    <div class="settings__form-container">
+      <div class="settings__formLabel">
+      所属している組織・会社
+      </div>
+      <%= f.text_field :group, class: 'settings__form' %>
+    </div>
+    <div class="settings__form-container">
+      <div class="settings__formLabel">
+      居住地
+      </div>
+      <%= f.text_field :city, class: 'settings__form' %>
+    </div>
+    <div class="settings__form-container">
+      <div class="settings__formLabel">
+      自己紹介
+      </div>
+      <%= f.text_area :introduce, class: 'settings__form', maxmum: 200, rows: 5 %>
+      <span>200文字以内</span>
+    </div>
+    <div class="settings__form-container">
+      <div class="settings__formLabel">
+      Facebook ID
+      </div>
+      <div class="settings__form">
+        <span>https://www.facebook.com/</span>
+        <%= f.text_field :facebook_url, class: 'settings__form--sns'%>
+      </div>
+    </div>
+    <div class="settings__form-container">
+      <div class="settings__formLabel">
+      LinkedIn ID
+      </div>
+      <div class="settings__form">
+        <span>https://www.linkedin.com/in/</span>
+        <%= f.text_field :linkedin_url, class: 'settings__form--sns' %>
+      </div>
+      <span>LinkedInの公開プロフィールURLは こちらの方法 で設定できます。</span>
+    </div>
+    <div class="settings__form-container">
+      <div class="settings__formLabel">
+      Google+ ID
+      </div>
+      <div class="settings__form">
+        <span>https://plus.google.com/</span>
+        <%= f.text_field :google_url, class: 'settings__form--sns' %>
+        <span>/post</span>
+      </div>
+      <div class="settings__formHelp">
+        紐付けを行うには Google+プロフィールページ のURLに含まれるIDを入力し、<br/>
+        Google+の寄稿先欄に "https://qiita.com/" を追加してください。
+      </div>
+    </div>
+    <%= f.submit '更新する', class: 'settings__submit' %>
+  </div>
+</div>
+
+<% end %>
+</div>
+</div>

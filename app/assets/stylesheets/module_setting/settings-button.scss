@@ -1,0 +1,37 @@
+.settings{
+  &__submit{
+    display: inline-block;
+    -webkit-appearance: button;
+    color: #fff;
+    background-color: #55c500;
+    border: none;
+    border-radius: .2em;
+    font-size: 1.4rem;
+    padding: 8px 24px;
+    margin-top: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    &:active{
+      background-color: #449e00;
+    }
+  }
+  &__team-mode{
+    -webkit-appearance: none;
+    color: rgb(51, 51, 51);
+    background: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(230, 230, 230);
+    border-image: initial;
+    &:active{
+        background-color: rgb(230,230,230);
+    }
+  }
+  &__danger{
+    background-color: rgb(225, 75, 34);
+    -webkit-appearance: none;
+    &:active{
+        background-color: rgb(200, 50, 20);
+    }
+  }
+}
