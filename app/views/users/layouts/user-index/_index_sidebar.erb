@@ -7,7 +7,7 @@
   <p class="user-index__index">索引</p>
   <div class="user-index__table">
   <% user_index.each do |p| %>
-    <%= link_to users_path(value: p), class:'user-index__item', id: p, data: { no_turbolink: true } do %>
+    <%= link_to users_path(value: p), class:'user-index__item', id: p do %>
       <%= p %>
     <% end %>
   <% end %>
