@@ -1,19 +1,34 @@
-
+.toc {
+  display: none;
+}
 @media (min-width: 768px){
-.homecontainer {
-    width: 740px;
-}}
+  .homecontainer {
+      width: 740px;
+  }
+  .toc {
+    display: none;
+  }
+}
 @media (min-width: 992px){
-.container {
-    width: 1000px;
-}}
+  .container {
+      width: 1000px;
+  }
+  .toc {
+    display: none;
+  }
+}
 @media (min-width: 1200px){
-.homecontainer {
-    width: 1160px;
-}}
+  .homecontainer {
+      width: 1160px;
+  }
+  .toc {
+    display: grid;
+  }
+}
 .homecontainer {
     margin-right: auto;
     margin-left: auto;
     padding-left: 10px;
     padding-right: 10px;
 }
+

@@ -102,57 +102,57 @@
       </div>
     </div>
 
-
     <div class="nav-bar__r">
-    <% if !(current_user.nil?) %>
-      <div class="nav-bar__r--link">
-      <button>
-        <i class="fas fa-folder-open fa-white"></i>
-      </button>
-        ストック一覧
-      </div>
-      <div class="nav-bar__r--button">
-        投稿する
-      </div>
-      <div class="nav-bar__r--tab">
-        0
-      </div>
-      <ul>
-        <li class="dropdown_container">
-          <div class="nav-bar__r__loginUser">
-            <div class="nav-bar__r__loginUser--icon">
-              <img src="https://avatars3.githubusercontent.com/u/8581682?v=4"/ >
-            </div>
-            <div class="nav-bar__r__loginUser--down ml8">
-              <i class="fas fa-caret-down"></i>
-            </div>
+      <% if !(current_user.nil?) %>
+        <div class="nav-bar__r--link">
+        <button>
+          <i class="fas fa-folder-open fa-white"></i>
+        </button>
+          ストック一覧
+        </div>
+        <%= link_to new_article_path do %>
+          <div class="nav-bar__r--button">
+            投稿する
           </div>
-          <ul>
-            <%= link_to  user_path(current_user.id) do %>
+        <% end %>
+        <div class="nav-bar__r--tab">
+          0
+        </div>
+        <ul>
+          <li class="dropdown_container">
+            <div class="nav-bar__r__loginUser">
+              <div class="nav-bar__r__loginUser--icon">
+                <%= image_tag current_user.avatar if current_user.avatar.attached?%>
+              </div>
+              <div class="nav-bar__r__loginUser--down ml8">
+                <i class="fas fa-caret-down"></i>
+              </div>
+            </div>
+            <ul>
+              <%= link_to  user_path(current_user.id) do %>
+                <li>
+                  <%= current_user.name %>
+                </li>
+              <% end %>
+              <div class="line"></div>
+              <li>下書き一覧</li>
+              <li>編集リクエスト一覧</li>
+              <div class="line"></div>
+              <%= link_to settings_account_path(current_user) do %>
+                <li>設定</li>
+              <% end %>
+              <li>ヘルプ</li>
+              <div class="line"></div>
               <li>
-                <%= current_user.name %>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'li'%>
               </li>
-            <% end %>
-            <div class="line"></div>
-            <li>下書き一覧</li>
-            <li>編集リクエスト一覧</li>
-            <div class="line"></div>
-            <%= link_to settings_account_path(current_user) do %>
-              <li>設定</li>
-            <% end %>
-            <li>ヘルプ</li>
-            <div class="line"></div>
-            <li>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'li'%>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    <% else %>
-          <%= link_to "登録する", new_user_registration_path, method: :get, class: 'nav-bar__r--notSigninButton'%>
-          <%= link_to "ログイン", new_user_session_path, method: :get, class: 'nav-bar__r--notLoginButton'%>
-      </div>
-    <% end %>
+            </ul>
+          </li>
+        </ul>
+      <% else %>
+        <%= link_to "登録する", new_user_registration_path, method: :get, class: 'nav-bar__r--notSigninButton'%>
+        <%= link_to "ログイン", new_user_session_path, method: :get, class: 'nav-bar__r--notLoginButton'%>
+      <% end %>
     </div>
   </div>
 </div>

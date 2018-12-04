@@ -40,55 +40,7 @@
       </div>
       <div>
         <!-- necessary 20items-->
-      <% (1..6).to_a.each do |content| %>
-        <div class="tr-Item">
-          <a class="tr-Item__userImage">
-            <img src="https://qiita-image-store.s3.amazonaws.com/0/159680/profile-images/1490964068" alt="sensuikan1973">
-          </a>
-          <div class="tr-Item__body">
-            <div class="tr-Item__title">
-              めっっっっっっっっっっっっっっちゃ長いコンテンツ1
-            </div>
-            <div class="tr-Item__meta">
-              <span>by
-                <a class="tr-Item__author"> 32</a>
-              </span>
-              <time>
-                "2 days"
-                " ago"
-              </time>
-              <div class="tr-Item__likeCount">
-                <i class="fa fa-thumbs-up mr-1of2">
-                </i>
-                "878"
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tr-Item">
-          <a class="tr-Item__userImage">
-            <img src="https://qiita-image-store.s3.amazonaws.com/0/189343/profile-images/1520164422" alt="ymy2642">
-          </a>
-          <div class="tr-Item__body">
-            <a class="tr-Item__title" href="/show">コンテンツ1</a>
-            <div class="tr-Item__meta">
-              <span class="tr-Item__new">new</span>
-              <span>by
-                <a class="tr-Item__author"> 11</a>
-              </span>
-              <time>
-                "2 days"
-                " ago"
-              </time>
-              <div class="tr-Item__likeCount">
-                <span class="fa fa-thumbs-up mr-1of2">
-                </span>
-                "878"
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
+        <%= render partial: 'articles/module/index-article', collection: @articles, as: "article" %>
       </div>
     </div>
     <!-- right bar -->

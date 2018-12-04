@@ -1,0 +1,29 @@
+<div class="tr-Item">
+  <a class="tr-Item__userImage">
+    <%= image_tag article.user.avatar,style: "height:40px;" if article.user.avatar.attached? %>
+  </a>
+  <div class="tr-Item__body">
+    <%= link_to article_path(article) do %>
+      <div class="tr-Item__title">
+        <%= article.title %>
+      </div>
+    <% end %>
+    <div class="tr-Item__meta">
+      <span>by
+        <a class="tr-Item__author">
+          <%= article.user.name %>
+        </a>
+      </span>
+      <time>
+        <%= ((Time.now - article.created_at)/3600/24).ceil %>
+        <span>days</span>
+        <span> ago</span>
+      </time>
+      <div class="tr-Item__likeCount">
+        <i class="fa fa-thumbs-up mr-1of2">
+        </i>
+        "878"
+      </div>
+    </div>
+  </div>
+</div>

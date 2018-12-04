@@ -1,0 +1,33 @@
+<%= form_for @article do |a| %>
+<div class="new__editor">
+  <div class="new__content">
+    <div class="new__editor__title">
+      <%= a.text_field :title, placeholder: 'タイトル',class: "form-control" %>
+    </div>
+    <div class="new__editor__tag">
+      <input type="" name="" class="form-control" placeholder="tag">
+    </div>
+    <div class="new__editor__body">
+
+      <div class="new__editor__edit">
+        <%= render 'articles/new_article/body-header' %>
+
+        <%= a.text_area :content, placeholder: 'プログラミング知識をMarkdown記法で書いて共有しよう',class: 'form-content' %>
+      </div>
+
+      <div class="new__editor__preview">
+        <%= render 'articles/new_article/preview-header' %>
+        <div class="form-preview markdown-body" id="preview">
+          <%= qiita_markdown(@article.content) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="new__footer">
+      <div class="btn-default new__save">
+        <%= a.submit "Qiitaに投稿", class: "new__save__btn"%>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -10,6 +10,9 @@ class User < ApplicationRecord
           authentication_keys: [:login]
 
   has_one :profile, dependent: :destroy
+  has_many :articles
+
+  has_one_attached :avatar
 
   validates :name, presence: :true, uniqueness: { case_sensitive: false }
   validates_format_of :name, with: /^[a-zA-Z0-9_\-\.]*$/, :multiline => true

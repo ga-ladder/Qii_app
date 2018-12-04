@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @articles = @user.articles
   end
 
   def edit
@@ -38,9 +39,9 @@ class UsersController < ApplicationController
       flash[:alert] = "You're not an user deleted"
       redirect_to root
     end
-    @user.destroy
-    flash[:notice] = "User deleted"
-    redirect_to root_path
+      @user.destroy
+      flash[:notice] = "User deleted"
+      redirect_to root_path
   end
 
   private
@@ -49,6 +50,6 @@ class UsersController < ApplicationController
   end
 
   def user_base_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :avatar)
   end
 end
