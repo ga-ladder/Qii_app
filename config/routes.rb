@@ -6,7 +6,8 @@ Rails.application.routes.draw do
       # for reCaptcha
   }
   root 'articles#index'
-  resources 'articles', only: [:show]
+  resources 'articles'
+  post 'preview_markdown' => 'articles#preview_markdown'
   resources 'organizations', only: [:index, :show]
   resources 'users', only:[:index, :show, :edit, :update, :destroy]
 

@@ -8,7 +8,10 @@
         <%= render 'users/layouts/user-profile-info/header' %>
         <%= render 'users/layouts/user-profile-info/profile-items' %>
       <% else %>
-        <img class="mb16 oneUser__profile__icon" alt="" src="http://chittagongit.com//images/android-profile-icon/android-profile-icon-25.jpg">
+        <div  class="mb16 oneUser__profile__icon" ">
+          <%= image_tag @user.avatar,style: "height:270px;border-radius:6px;" if @user.avatar.attached?%>
+        </div>
+<!--         <img class="mb16 oneUser__profile__icon" alt="" src="http://chittagongit.com//images/android-profile-icon/android-profile-icon-25.jpg"> -->
         <h3>@<%= @user.name %></h3>
       <% end %>
       <% if current_user == @user %>
@@ -28,7 +31,7 @@
         <ul class="oneUser__nav oneUser__nav__chart">
           <li class="oneUser__nav--item nav-active">
             <div class="oneUser__nav--count">
-              0
+              <%= @user.articles.count %>
             </div>
             items
           </li>
@@ -50,7 +53,7 @@
       </div>
       <ul class="oneUser__nav oneUser__nav__local">
         <li class="oneUser__nav--item nav-active">
-          最近の投稿 0
+          最近の投稿 <%= @articles.count %>
         </li>
         <li class="oneUser__nav--item">
           いいねした投稿
@@ -62,7 +65,37 @@
           コメント
         </li>
       </ul>
-      <p>ga-ladderさんの投稿はありません</p>
+      <% if @articles.count.zero? %>
+        <p><%= @user.name %>さんの投稿はありません</p>
+      <% else %>
+        <% @articles.each do |article| %>
+          <%= link_to article_path(article) do %>
+            <article class="item-link">
+              <div class="item-link__img">
+                <%= image_tag current_user.avatar, style: "height:40px;border-radius:6px;" if @user.avatar.attached? %>
+              </div>
+              <div>
+                <div class="item-link__title">
+                  <%= article.title %>
+                </div>
+                <div class="item-link__meta">
+                  <div class="item-link__folder">
+                    <button>
+                      <i class="fas fa-folder-open"></i>
+                    </button>
+                    <div class="tag-list__item">
+                      <a class="tag-list__label" href="/">
+                        <img class="tag-list__icon" src="https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/8908372b8c943d908e0ceef18e2a20711ccf5c06/thumb.jpg?1515774066">
+                        C++
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

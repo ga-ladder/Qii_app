@@ -17,13 +17,20 @@ GitHub
 sdlkfj3w0ao2@outlook.jp
 Gravatar
 画像
+
 アップロード -->
 <p>Gravatar側での画像の変更は即座に反映されません。5分ほどお待ちください。</p>
 <p>GitHubやTwitterでユーザ名を変更した場合は、いったんQiitaから ログアウト して再度OAuth認証を行なってください。</p>
 
-ユーザ名
+
 <%= form_for @user do |f| %>
-  <%= f.text_field :name, class: 'settings__form', value: @user.name %>
+  <%= image_tag current_user.avatar.variant(resize: "100x100"), style:"border-radius:6px;" if current_user.avatar.attached? %>
+  <%= f.file_field :avatar, value: current_user %>
+
+  <div>
+    <%= f.label :name, 'ユーザ名' %>
+    <%= f.text_field :name, class: 'settings__form', value: @user.name %>
+  </div>
 <!--
 ユーザ名を変更するにはパスワードの登録が必要です。
 外部サービス
