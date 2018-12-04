@@ -14,20 +14,23 @@
           <div class="main__author">
             <div class="main__authorIcon">
               <a>
-                <img class="it-Header_authorImage" src="https://qiita-image-store.s3.amazonaws.com/0/6598/profile-images/1533716344" alt="1533716344">
+                <%= image_tag @article.user.avatar,style: "height:32px;" if @article.user.avatar.attached? %>
               </a>
             </div>
-            <div class="main__authorName">@k7a</div>
+            <div class="main__authorName">
+              <%= @article.user.name %>
+            </div>
           </div>
           <div class="main__time">
             <meta content="2016-03-14T00:11:37+09:00" itemprop="datePublished" />
-            <span data-toggle="tooltip" title="2016年03月14日に投稿"><time datetime="2016-03-15T20:42:35+09:00" itemprop="dateModified">2016年03月15日</time>
-              に更新
+            <span data-toggle="tooltip" title="<%= @article.created_at %>に投稿"><time datetime="<%= @article.created_at %>" itemprop="dateModified"><%= @article.created_at.strftime('%Y年%m月%d日') %></time>
+              に投稿
             </span>
           </div>
           <div class="main__options">
             <div class="main__manipulate">
               <div class="dropdown">
+                <% unless @article.user == current_user %>
                 <a class="main__dropdownToggle" data-toggle="dropdown" href="#">
                   <span class="fa fa-ellipsis-h fa-lg"></span>
                 </a>
@@ -59,11 +62,23 @@
                       </a>
                     </li>
                   </ul> -->
-                </div>
+                <% else %>
+                  <div class="dropdown__meta">
+                    <div class="dropdown__edit">
+                      <%= link_to "編集する", edit_article_path(@article) %>
+                    </div>
+                    <div class="dropdown__menu">
+                      <span class="fa fa-ellipsis-h fa-lg"></span>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
-        <h1 class="main__title" itemprop="headline">Chrome拡張の開発方法まとめ　その1：概念編</h1>
+        <h1 class="main__title" itemprop="headline">
+          <%= @article.title %>
+        </h1>
         <div class="main__tags">
           <div class="main__tags--item">
             JavaScript
@@ -79,15 +94,8 @@
       <div class="main__article--alert p16">
         この記事は最終更新日から1年以上が経過しています。
       </div>
-      <div class="main__MDcontent">
-        あるいは、画像コメントのすすめ。
-        他にもスナップショットテストのスクショを埋め込んだり、スタイル設定を可視化したり。
-        いろいろ遊んでみてはいかがでしょうか。
-        注意点
-        画像をリポジトリに含めるとリポジトリが肥大化します。しょうがないね。
-        ソースコードを変更するときは画像も更新が必要です。当然だけどひと手間増えて面倒かも。
-        [ここから追記 9/26更新]
-        以前こんなこと考えていたのを思い出しました。(開発放置中)
+      <div class="main__MDcontent markdown-body">
+        <%= qiita_markdown(@article.content) %>
       </div>
       <div class="main__footer">
         <div class="main__footer--actions">
@@ -108,16 +116,16 @@
       <div class="pf-container">
         <div class="pf-user">
           <a>
-            <img class="pf-user__img" itemprop="image" src="https://qiita-image-store.s3.amazonaws.com/0/97014/profile-images/1537175383" alt="1537175383">
+            <%= image_tag @article.user.avatar,style: "height:60px;border-radius:3px;" if @article.user.avatar.attached? %>
           </a>
           <div class="pf-user__body">
             <div class="pf-user__header">
               <a class="pf-user--lnknm">
-                @k7a
+                <%= @article.user.name %>
               </a>
             </div>
             <div class="pf-user__description">
-              Ruby on Rails & Unity Engineer
+              <%= @article.user.profile.introduce unless @article.user.profile.nil? %>
             </div>
             <div class="pf-user__footer">
               <span class="userFollowButton">
@@ -140,13 +148,8 @@
   <div class="toc">
     <div class="toc__tree">
       <div class="toc__nav">
-        <ul>
-          <li>対象</li>
-          <li class="active">概要</li>
-          <li class="active">概要</li>
-          <li class="active">概要</li>
-          <li class="active">概要</li>
-          <li class="active">概要</li>
+        <ul id="tocNav">
+          <!-- <li class="active">概要</li> -->
         </ul>
       </div>
     </div>
