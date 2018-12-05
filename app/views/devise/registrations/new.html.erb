@@ -4,25 +4,9 @@
   </h1>
   <h3 class="user-session--subtitle">新規登録(無料)して利用を開始しましょう。</h3>
   <hr class="mt16 mb16 hr">
-  <div class="user-session__left-content">
-    <div class="user-session__left-content">
-      <% companyList = ["GitHub", "Twitter", "Google"] %>
-      <% companyList.each do |companyname| %>
-      <div class="user-session__social-login">
-        <div class="user-session--<%= companyname.downcase %>Login">
-          <i class="fab fa-<%= companyname.downcase %>"></i>
-          <%= companyname %>アカウントで登録
-        </div>
-      </div>
-      <% end %>
-      <p class="user-session--caution">
-        Qiitaが許可無くTwitterに投稿することはありません。
-      </p>
-      <div class="user-session__guide arrange-leftside">
-        <%= render "devise/shared/links" %>
-      </div>
-    </div>
-  </div>
+
+  <%= render "/devise/shared/auth" %>
+
   <div class="user-session__right-content">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.text_field :name , placeholder: "ユーザ名", class: 'field mb16'%>
