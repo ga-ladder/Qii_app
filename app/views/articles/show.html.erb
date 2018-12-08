@@ -2,10 +2,9 @@
 <!-- header -->
 <%= render 'layouts/header' %>
 <div class="home-container px16 pt32">
-<div class="container"> <!-- 記事部分全体 (背景色がグレー) -->
-
+<div class="container" id="article-<%= @article.id %>" data-article-id="<%= @article.id %>"> <!-- 記事部分全体 (背景色がグレー) -->
+  <%= render "sub-menu" %>
   <!-- 左側に表示される「いいね」「ストック」ボタン -->
-<%= render 'articles/module/sub-menu' %>
   <!-- 記事部分 (背景色が白) -->
   <div class="main p16">
     <div class="main__article">

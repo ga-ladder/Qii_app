@@ -1,0 +1,33 @@
+<div id="like_articles_content" class="tab_content">
+  <% if @likes.count.zero? %>
+    <p>まだ<%= @user.name %>さんのいいねした記事はありません</p>
+  <% else %>
+    <% @likes.each do |like| %>
+      <%= link_to article_path(like.article) do %>
+        <article class="item-link">
+          <div class="item-link__img">
+            <%= image_tag like.article.user.avatar, style: "height:40px;border-radius:6px;" if like.article.user.avatar.attached? %>
+          </div>
+          <div>
+            <div class="item-link__title">
+              <%= like.article.title %>
+            </div>
+            <div class="item-link__meta">
+              <div class="item-link__folder">
+                <button>
+                  <i class="fas fa-folder-open"></i>
+                </button>
+                <div class="tag-list__item">
+                  <a class="tag-list__label" href="/">
+                    <img class="tag-list__icon" src="https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/8908372b8c943d908e0ceef18e2a20711ccf5c06/thumb.jpg?1515774066">
+                    C++
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

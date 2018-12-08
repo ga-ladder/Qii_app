@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   include ApplicationHelper
 
   def index
-    @articles = Article.all.reverse_order
+    @articles = Article.all.includes(:likes, :user).reverse_order
   end
 
   def show
@@ -44,6 +44,16 @@ class ArticlesController < ApplicationController
       format.json
       format.text { render text: @markdown }
     end
+  end
+
+  # マイクロポストをいいねする
+  def good(user)
+    likes.create(user_id: user.id)
+  end
+
+  # マイクロポストのいいねを解除する（ネーミングセンスに対するクレームは受け付けません）
+  def ungood(user)
+    likes.find_by(user_id: user.id).destroy
   end
 
 private

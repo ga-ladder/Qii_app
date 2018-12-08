@@ -1,0 +1,20 @@
+  <span class="like">
+  <% if article.iine?(current_user) %>
+    <%= form_for(article.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
+      <%= button_tag(class: "btn btn-default btn-xs stickyMenu__like fa-fm-green") do %>
+        <%= content_tag :span, class: "glyphicon glyphicon-heart" do %>
+          <i class="fas fa-check"></i>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= form_for(article.likes.build, remote: true) do |f| %>
+      <div><%= hidden_field_tag :article_id, article.id %></div>
+      <%= button_tag(class: "btn btn-default btn-xs") do %>
+        <%= content_tag :span, "o", class: "glyphicon glyphicon-heart-empty" do %>
+        <i class="far fa-thumbs-up fa-green"></i>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</span>

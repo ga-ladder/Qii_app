@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
   def show
     @articles = @user.articles
+    @likes = @user.likes.includes(:article)
   end
 
   def edit
