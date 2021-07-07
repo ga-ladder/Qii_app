@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'likes/create'
+  get 'likes/destroy'
   # devise_for :users
   devise_for :users, controllers: {
            registrations: "users/registrations",
@@ -17,4 +19,6 @@ Rails.application.routes.draw do
   end
 
   get '/delete/:id', to: 'settings#delete', as: 'user_delete'
+
+  resources :likes, only: [:create, :destroy]
 end

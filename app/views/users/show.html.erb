@@ -51,51 +51,33 @@
           </div>
         </ul>
       </div>
-      <ul class="oneUser__nav oneUser__nav__local">
-        <li class="oneUser__nav--item nav-active">
+<!--       <ul class="oneUser__nav oneUser__nav__local">
+        <li class="oneUser__nav--item nav-active" id="my_articles">
           最近の投稿 <%= @articles.count %>
         </li>
-        <li class="oneUser__nav--item">
+        <li class="oneUser__nav--item" id="like_articles">
           いいねした投稿
         </li>
-        <li class="oneUser__nav--item">
+        <li class="oneUser__nav--item" id="only_ourselves">
           限定共有投稿
         </li>
-        <li class="oneUser__nav--item">
+        <li class="oneUser__nav--item" id="comments">
           コメント
         </li>
-      </ul>
-      <% if @articles.count.zero? %>
-        <p><%= @user.name %>さんの投稿はありません</p>
-      <% else %>
-        <% @articles.each do |article| %>
-          <%= link_to article_path(article) do %>
-            <article class="item-link">
-              <div class="item-link__img">
-                <%= image_tag current_user.avatar, style: "height:40px;border-radius:6px;" if @user.avatar.attached? %>
-              </div>
-              <div>
-                <div class="item-link__title">
-                  <%= article.title %>
-                </div>
-                <div class="item-link__meta">
-                  <div class="item-link__folder">
-                    <button>
-                      <i class="fas fa-folder-open"></i>
-                    </button>
-                    <div class="tag-list__item">
-                      <a class="tag-list__label" href="/">
-                        <img class="tag-list__icon" src="https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/8908372b8c943d908e0ceef18e2a20711ccf5c06/thumb.jpg?1515774066">
-                        C++
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          <% end %>
-        <% end %>
-      <% end %>
+      </ul> -->
+      <div class="oneUser__nav oneUser__nav__local tabs">
+        <input id="my_articles" type="radio" name="tab_item" checked>
+        <label class="oneUser__nav--item nav-active" for="my_articles">最近の投稿 <%= @articles.count %></label>
+        <input id="like_articles" type="radio" name="tab_item">
+        <label class="oneUser__nav--item" for="like_articles">いいねした投稿</label>
+        <input id="only_ourseleves" type="radio" name="tab_item">
+        <label class="oneUser__nav--item" for="only_ourseleves">限定共有投稿</label>
+        <input id="comments" type="radio" name="tab_item">
+        <label class="oneUser__nav--item" for="comments">コメント</label>
+        <%= render "users/layouts/user-profile-info/preview" %>
+        <%= render "users/layouts/user-profile-info/like_articles" %>
+        <%= render "users/layouts/user-profile-info/only_ourselves" %>
+      </div>
     </div>
   </div>
 </div>

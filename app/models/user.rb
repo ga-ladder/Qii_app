@@ -14,6 +14,8 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
+  has_many :likes, dependent: :destroy
+
   validates :name, presence: :true, uniqueness: { case_sensitive: false }
   validates_format_of :name, with: /^[a-zA-Z0-9_\-\.]*$/, :multiline => true
 
